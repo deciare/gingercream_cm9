@@ -2037,7 +2037,7 @@
     </style>
     <style name="TextAppearance.Holo.DialogWindowTitle" parent="@style/TextAppearance.Holo">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/white</item>
     </style>
     <style name="TextAppearance.SuggestionHighlight" parent="@style/TextAppearance">
         <item name="textSize">18.0sp</item>
@@ -3037,7 +3037,7 @@
     </style>
     <style name="TextAppearance.Holo.Light.DialogWindowTitle" parent="@style/TextAppearance.Holo.Light">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/black</item>
     </style>
     <style name="TextAppearance.Holo.Light.CalendarViewWeekDayView" parent="@style/TextAppearance.Small.CalendarViewWeekDayView" />
     <style name="Holo" />
