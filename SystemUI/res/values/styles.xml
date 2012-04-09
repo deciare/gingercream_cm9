@@ -19,22 +19,22 @@
     <style name="TextAppearance.StatusBar.Battery" parent="@android:style/TextAppearance.StatusBar.Icon">
         <item name="android:textSize">12.0dip</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
     <style name="TextAppearance.StatusBar.Clock" parent="@android:style/TextAppearance.StatusBar.Icon">
         <item name="android:textSize">16.0dip</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
     <style name="TextAppearance.StatusBar.Date" parent="@android:style/TextAppearance.StatusBar.Icon">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textColor">@android:color/holo_green_light</item>
     </style>
     <style name="TextAppearance.StatusBar.Signal" parent="@android:style/TextAppearance.StatusBar.Icon">
         <item name="android:textSize">12.0dip</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
     <style name="Animation" />
     <style name="Animation.ShirtPocketPanel" parent="@style/Animation">
