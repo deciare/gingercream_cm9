@@ -1234,7 +1234,7 @@
     .line 648
     .end local v0           #iconId:I
     :cond_2
-    const v0, 0x7f0200c9
+    const v0, 0x7f0200dc
 
     .line 649
     .restart local v0       #iconId:I
@@ -1879,7 +1879,7 @@
     .locals 5
 
     .prologue
-    const v3, 0x7f0200de
+    const v3, 0x7f0200f1
 
     .line 461
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/NetworkController;->hasService()Z
@@ -3932,7 +3932,7 @@
     iput-object v7, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mContentDescriptionPhoneSignal:Ljava/lang/String;
 
     .line 1004
-    const v7, 0x7f0200da
+    const v7, 0x7f0200ed
 
     iput v7, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mDataSignalIconId:I
 
@@ -4093,7 +4093,7 @@
 
     .line 930
     :pswitch_0
-    const v1, 0x7f0200db
+    const v1, 0x7f0200ee
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mMobileActivityIconId:I
 
@@ -4101,7 +4101,7 @@
 
     .line 933
     :pswitch_1
-    const v1, 0x7f0200df
+    const v1, 0x7f0200f2
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mMobileActivityIconId:I
 
@@ -4109,7 +4109,7 @@
 
     .line 936
     :pswitch_2
-    const v1, 0x7f0200dc
+    const v1, 0x7f0200ef
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mMobileActivityIconId:I
 
@@ -4144,7 +4144,7 @@
 
     .line 963
     :pswitch_4
-    const v2, 0x7f0200e3
+    const v2, 0x7f0200f6
 
     iput v2, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mWifiActivityIconId:I
 
@@ -4152,7 +4152,7 @@
 
     .line 966
     :pswitch_5
-    const v2, 0x7f0200e5
+    const v2, 0x7f0200f8
 
     iput v2, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mWifiActivityIconId:I
 
@@ -4160,7 +4160,7 @@
 
     .line 969
     :pswitch_6
-    const v2, 0x7f0200e4
+    const v2, 0x7f0200f7
 
     iput v2, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mWifiActivityIconId:I
 

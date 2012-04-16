@@ -591,7 +591,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 984
-    const v0, 0x7f0e006d
+    const v0, 0x7f0e006e
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -631,7 +631,7 @@
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 995
-    const v0, 0x7f0e0062
+    const v0, 0x7f0e0063
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5202,7 +5202,7 @@
     .line 409
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTrackingView:Lcom/android/systemui/statusbar/phone/TrackingView;
 
-    const v9, 0x7f0e009b
+    const v9, 0x7f0e009c
 
     invoke-virtual {v8, v9}, Lcom/android/systemui/statusbar/phone/TrackingView;->findViewById(I)Landroid/view/View;
 

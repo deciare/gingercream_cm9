@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1290
+    .line 1306
     iput-object p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,24 +42,24 @@
     .parameter "v"
 
     .prologue
-    .line 1292
+    .line 1308
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentButton:Landroid/view/View;
 
     if-ne p1, v0, :cond_1
 
-    .line 1293
+    .line 1309
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->onClickRecentButton()V
 
-    .line 1299
+    .line 1315
     :cond_0
     :goto_0
     return-void
 
-    .line 1294
+    .line 1310
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
@@ -67,14 +67,14 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 1295
+    .line 1311
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->onClickInputMethodSwitchButton()V
 
     goto :goto_0
 
-    .line 1296
+    .line 1312
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
@@ -82,7 +82,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1297
+    .line 1313
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->onClickCompatModeButton()V

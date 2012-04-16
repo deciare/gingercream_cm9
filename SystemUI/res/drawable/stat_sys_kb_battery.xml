@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00ca" android:maxLevel="4" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00cc" android:maxLevel="15" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00cd" android:maxLevel="35" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00ce" android:maxLevel="49" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00cf" android:maxLevel="60" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00d0" android:maxLevel="75" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00d1" android:maxLevel="90" />
+    <item android:drawable="@drawable/APKTOOL_DUMMY_00cb" android:maxLevel="100" />
+</level-list>

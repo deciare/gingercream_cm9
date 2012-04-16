@@ -420,7 +420,7 @@
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->setWillNotDraw(Z)V
 
     .line 85
-    const v0, 0x7f0e005f
+    const v0, 0x7f0e0060
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -436,7 +436,7 @@
     invoke-virtual {v0}, Landroid/view/ViewGroup;->bringToFront()V
 
     .line 87
-    const v0, 0x7f0e0063
+    const v0, 0x7f0e0064
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -461,7 +461,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->mSettingsButton:Landroid/view/View;
 
     .line 91
-    const v0, 0x7f0e0069
+    const v0, 0x7f0e006a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -470,7 +470,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->mNotificationButton:Landroid/view/View;
 
     .line 93
-    const v0, 0x7f0e0061
+    const v0, 0x7f0e0062
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -479,7 +479,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->mNotificationScroller:Landroid/view/View;
 
     .line 94
-    const v0, 0x7f0e0060
+    const v0, 0x7f0e0061
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 

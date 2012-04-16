@@ -125,7 +125,7 @@
     .line 59
     iget-object v5, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberPain:Landroid/graphics/Paint;
 
-    const v6, 0x7f020105
+    const v6, 0x7f020118
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getColor(I)I
 

@@ -844,7 +844,7 @@
 
     .line 86
     :pswitch_1
-    const v1, 0x7f0200ef
+    const v1, 0x7f020102
 
     iput v1, p0, Lcom/android/systemui/statusbar/powerwidget/SoundButton;->mIcon:I
 

@@ -862,7 +862,7 @@
 
     .line 122
     :cond_0
-    const v0, 0x7f0e006a
+    const v0, 0x7f0e006b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/HoloClock;->findViewById(I)Landroid/view/View;
 
@@ -893,7 +893,7 @@
 
     .line 128
     :cond_1
-    const v0, 0x7f0e006b
+    const v0, 0x7f0e006c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/HoloClock;->findViewById(I)Landroid/view/View;
 

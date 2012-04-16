@@ -148,9 +148,9 @@
     .locals 4
 
     .prologue
-    const v3, 0x7f0200f6
+    const v3, 0x7f020109
 
-    const v2, 0x7f0200f5
+    const v2, 0x7f020108
 
     .line 109
     sget-object v0, Lcom/android/systemui/statusbar/powerwidget/WimaxButton;->sWimaxState:Lcom/android/systemui/statusbar/powerwidget/StateTracker;

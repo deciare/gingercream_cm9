@@ -249,7 +249,7 @@
 
     .line 98
     .local v3, launchAppListener:Landroid/view/View$OnClickListener;
-    const v9, 0x7f0e0072
+    const v9, 0x7f0e0073
 
     invoke-virtual {v8, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -274,7 +274,7 @@
     invoke-virtual {v7, v4}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 113
-    const v9, 0x7f0e0075
+    const v9, 0x7f0e0076
 
     invoke-virtual {v8, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -290,7 +290,7 @@
     invoke-virtual {v0, v5}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 116
-    const v9, 0x7f0e0077
+    const v9, 0x7f0e0078
 
     invoke-virtual {v8, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -646,7 +646,7 @@
 
     .prologue
     .line 189
-    const v0, 0x7f0e0071
+    const v0, 0x7f0e0072
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -849,7 +849,7 @@
     invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsVerticalScrollView;->setScrollbarFadingEnabled(Z)V
 
     .line 249
-    const v1, 0x7f0e007b
+    const v1, 0x7f0e007c
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsVerticalScrollView;->findViewById(I)Landroid/view/View;
 

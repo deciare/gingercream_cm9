@@ -793,7 +793,7 @@
     .line 251
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView;->mRecentsScrim:Landroid/view/View;
 
-    const v1, 0x7f02010a
+    const v1, 0x7f02011d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -1103,7 +1103,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 337
-    const v0, 0x7f0e007a
+    const v0, 0x7f0e007b
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recent/RecentsPanelView;->findViewById(I)Landroid/view/View;
 
@@ -1146,7 +1146,7 @@
     .line 355
     .end local v6           #scrollView:Lcom/android/systemui/recent/RecentsHorizontalScrollView;
     :goto_0
-    const v0, 0x7f0e0079
+    const v0, 0x7f0e007a
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recent/RecentsPanelView;->findViewById(I)Landroid/view/View;
 
@@ -1155,7 +1155,7 @@
     iput-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView;->mRecentsScrim:Landroid/view/View;
 
     .line 356
-    const v0, 0x7f0e007c
+    const v0, 0x7f0e007d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recent/RecentsPanelView;->findViewById(I)Landroid/view/View;
 
@@ -1181,7 +1181,7 @@
     iput-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView;->mChoreo:Lcom/android/systemui/recent/Choreographer;
 
     .line 358
-    const v0, 0x7f0e007d
+    const v0, 0x7f0e007e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recent/RecentsPanelView;->findViewById(I)Landroid/view/View;
 
@@ -1398,7 +1398,7 @@
 
     .line 439
     :cond_0
-    const v6, 0x7f0e007b
+    const v6, 0x7f0e007c
 
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

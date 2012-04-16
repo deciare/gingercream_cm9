@@ -94,6 +94,7 @@
     <item type="id" name="time_solid">false</item>
     <item type="id" name="network_text">false</item>
     <item type="id" name="bluetooth">false</item>
+    <item type="id" name="dock_battery">false</item>
     <item type="id" name="panel_root">false</item>
     <item type="id" name="content_parent">false</item>
     <item type="id" name="content_frame">false</item>

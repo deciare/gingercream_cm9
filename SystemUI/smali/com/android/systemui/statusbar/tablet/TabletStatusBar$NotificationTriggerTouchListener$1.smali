@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1422
+    .line 1438
     iput-object p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener$1;->this$1:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 1423
+    .line 1439
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener$1;->this$1:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1425
+    .line 1441
     return-void
 .end method

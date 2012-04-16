@@ -131,7 +131,7 @@
 
     .line 132
     .local v0, holder:Lcom/android/systemui/recent/RecentsPanelView$ViewHolder;
-    const v3, 0x7f0e0072
+    const v3, 0x7f0e0073
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
     iput-object v3, v0, Lcom/android/systemui/recent/RecentsPanelView$ViewHolder;->thumbnailView:Landroid/view/View;
 
     .line 133
-    const v3, 0x7f0e0073
+    const v3, 0x7f0e0074
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,7 +168,7 @@
     invoke-static {v3, v0, v4, v6, v6}, Lcom/android/systemui/recent/RecentsPanelView;->access$200(Lcom/android/systemui/recent/RecentsPanelView;Lcom/android/systemui/recent/RecentsPanelView$ViewHolder;Landroid/graphics/Bitmap;ZZ)V
 
     .line 139
-    const v3, 0x7f0e0074
+    const v3, 0x7f0e0075
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +179,7 @@
     iput-object v3, v0, Lcom/android/systemui/recent/RecentsPanelView$ViewHolder;->iconView:Landroid/widget/ImageView;
 
     .line 140
-    const v3, 0x7f0e0075
+    const v3, 0x7f0e0076
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
     iput-object v3, v0, Lcom/android/systemui/recent/RecentsPanelView$ViewHolder;->labelView:Landroid/widget/TextView;
 
     .line 141
-    const v3, 0x7f0e0076
+    const v3, 0x7f0e0077
 
     invoke-virtual {p2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

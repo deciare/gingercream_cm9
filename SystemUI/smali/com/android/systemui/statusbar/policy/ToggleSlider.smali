@@ -89,7 +89,7 @@
 
     .line 65
     .local v0, a:Landroid/content/res/TypedArray;
-    const v2, 0x7f0e0098
+    const v2, 0x7f0e0099
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/policy/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -107,7 +107,7 @@
     .line 67
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/ToggleSlider;->mToggle:Landroid/widget/CompoundButton;
 
-    const v3, 0x7f020102
+    const v3, 0x7f020115
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -116,7 +116,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/CompoundButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 69
-    const v2, 0x7f0e0099
+    const v2, 0x7f0e009a
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/policy/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -132,7 +132,7 @@
     invoke-virtual {v2, p0}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
     .line 72
-    const v2, 0x7f0e009a
+    const v2, 0x7f0e009b
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/policy/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     .line 85
     .local v2, thumb:Landroid/graphics/drawable/Drawable;
-    const v3, 0x7f020100
+    const v3, 0x7f020113
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

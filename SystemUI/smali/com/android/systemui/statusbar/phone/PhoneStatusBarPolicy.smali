@@ -67,18 +67,18 @@
 
     :array_0
     .array-data 0x4
-        0xe7t 0x0t 0x2t 0x7ft
-        0xe9t 0x0t 0x2t 0x7ft
-        0xebt 0x0t 0x2t 0x7ft
-        0xedt 0x0t 0x2t 0x7ft
+        0xfat 0x0t 0x2t 0x7ft
+        0xfct 0x0t 0x2t 0x7ft
+        0xfet 0x0t 0x2t 0x7ft
+        0x0t 0x1t 0x2t 0x7ft
     .end array-data
 
     :array_1
     .array-data 0x4
-        0xe8t 0x0t 0x2t 0x7ft
-        0xeat 0x0t 0x2t 0x7ft
-        0xect 0x0t 0x2t 0x7ft
-        0xeet 0x0t 0x2t 0x7ft
+        0xfbt 0x0t 0x2t 0x7ft
+        0xfdt 0x0t 0x2t 0x7ft
+        0xfft 0x0t 0x2t 0x7ft
+        0x1t 0x1t 0x2t 0x7ft
     .end array-data
 .end method
 
@@ -221,7 +221,7 @@
 
     const-string v5, "tty"
 
-    const v6, 0x7f0200e2
+    const v6, 0x7f0200f5
 
     invoke-virtual {v3, v5, v6, v4, v7}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -237,7 +237,7 @@
 
     const-string v5, "cdma_eri"
 
-    const v6, 0x7f0200cc
+    const v6, 0x7f0200df
 
     invoke-virtual {v3, v5, v6, v4, v7}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -325,7 +325,7 @@
 
     const-string v5, "sync_active"
 
-    const v6, 0x7f0200e0
+    const v6, 0x7f0200f3
 
     invoke-virtual {v3, v5, v6, v4, v7}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -334,7 +334,7 @@
 
     const-string v5, "sync_failing"
 
-    const v6, 0x7f0200e1
+    const v6, 0x7f0200f4
 
     invoke-virtual {v3, v5, v6, v4, v7}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -357,7 +357,7 @@
 
     const-string v5, "volume"
 
-    const v6, 0x7f0200ca
+    const v6, 0x7f0200dd
 
     invoke-virtual {v3, v5, v6, v4, v7}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -763,7 +763,7 @@
 
     const-string v3, "tty"
 
-    const v4, 0x7f0200e2
+    const v4, 0x7f0200f5
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
@@ -845,7 +845,7 @@
     if-eqz v6, :cond_4
 
     .line 242
-    const v2, 0x7f0200cb
+    const v2, 0x7f0200de
 
     .line 243
     .local v2, iconId:I
@@ -901,7 +901,7 @@
     .restart local v1       #contentDescription:Ljava/lang/String;
     .restart local v4       #visible:Z
     :cond_4
-    const v2, 0x7f0200ca
+    const v2, 0x7f0200dd
 
     .line 246
     .restart local v2       #iconId:I

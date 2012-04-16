@@ -39,24 +39,24 @@
     .parameter "id"
 
     .prologue
-    .line 1337
+    .line 1353
     iput-object p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1338
+    .line 1354
     iput-object p2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
-    .line 1339
+    .line 1355
     iput-object p3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mPkg:Ljava/lang/String;
 
-    .line 1340
+    .line 1356
     iput-object p4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mTag:Ljava/lang/String;
 
-    .line 1341
+    .line 1357
     iput p5, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mId:I
 
-    .line 1342
+    .line 1358
     return-void
 .end method
 
@@ -71,7 +71,7 @@
 
     const/4 v10, 0x0
 
-    .line 1350
+    .line 1366
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -79,7 +79,7 @@
 
     invoke-interface {v4}, Landroid/app/IActivityManager;->resumeAppSwitches()V
 
-    .line 1353
+    .line 1369
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v4
@@ -88,27 +88,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 1357
+    .line 1373
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
     if-eqz v4, :cond_0
 
-    .line 1358
+    .line 1374
     const/4 v4, 0x2
 
     new-array v3, v4, [I
 
-    .line 1359
+    .line 1375
     .local v3, pos:[I
     invoke-virtual {p1, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1360
+    .line 1376
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 1361
+    .line 1377
     .local v2, overlay:Landroid/content/Intent;
     new-instance v4, Landroid/graphics/Rect;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    .line 1364
+    .line 1380
     :try_start_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
@@ -150,7 +150,7 @@
     :try_end_1
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1371
+    .line 1387
     :goto_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
@@ -164,7 +164,7 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 1373
+    .line 1389
     .local v1, kgm:Landroid/app/KeyguardManager;
     if-eqz v1, :cond_0
 
@@ -172,7 +172,7 @@
 
     invoke-virtual {v1, v4}, Landroid/app/KeyguardManager;->exitKeyguardSecurely(Landroid/app/KeyguardManager$OnKeyguardExitResult;)V
 
-    .line 1377
+    .line 1393
     .end local v1           #kgm:Landroid/app/KeyguardManager;
     .end local v2           #overlay:Landroid/content/Intent;
     .end local v3           #pos:[I
@@ -195,27 +195,27 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 1383
+    .line 1399
     :goto_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->animateCollapse()V
 
-    .line 1384
+    .line 1400
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-virtual {v4, v10}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->visibilityChanged(Z)V
 
-    .line 1388
+    .line 1404
     return-void
 
-    .line 1366
+    .line 1382
     .restart local v2       #overlay:Landroid/content/Intent;
     .restart local v3       #pos:[I
     :catch_0
     move-exception v0
 
-    .line 1368
+    .line 1384
     .local v0, e:Landroid/app/PendingIntent$CanceledException;
     const-string v4, "TabletStatusBar"
 
@@ -241,7 +241,7 @@
 
     goto :goto_1
 
-    .line 1378
+    .line 1394
     .end local v0           #e:Landroid/app/PendingIntent$CanceledException;
     .end local v2           #overlay:Landroid/content/Intent;
     .end local v3           #pos:[I
@@ -250,7 +250,7 @@
 
     goto :goto_2
 
-    .line 1354
+    .line 1370
     :catch_2
     move-exception v4
 

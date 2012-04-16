@@ -143,9 +143,9 @@
     .locals 4
 
     .prologue
-    const v3, 0x7f0200f4
+    const v3, 0x7f020107
 
-    const v2, 0x7f0200f3
+    const v2, 0x7f020106
 
     .line 99
     sget-object v0, Lcom/android/systemui/statusbar/powerwidget/WifiButton;->sWifiState:Lcom/android/systemui/statusbar/powerwidget/StateTracker;

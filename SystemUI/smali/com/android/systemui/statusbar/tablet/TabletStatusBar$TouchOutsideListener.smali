@@ -33,18 +33,18 @@
     .parameter "panel"
 
     .prologue
-    .line 1908
+    .line 1924
     iput-object p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1909
+    .line 1925
     iput p2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;->mMsg:I
 
-    .line 1910
+    .line 1926
     iput-object p3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;->mPanel:Lcom/android/systemui/statusbar/tablet/StatusBarPanel;
 
-    .line 1911
+    .line 1927
     return-void
 .end method
 
@@ -56,12 +56,12 @@
     .parameter "ev"
 
     .prologue
-    .line 1914
+    .line 1930
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 1915
+    .line 1931
     .local v0, action:I
     const/4 v1, 0x4
 
@@ -89,7 +89,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1918
+    .line 1934
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
@@ -99,7 +99,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1919
+    .line 1935
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;->this$0:Lcom/android/systemui/statusbar/tablet/TabletStatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
@@ -108,10 +108,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1920
+    .line 1936
     const/4 v1, 0x1
 
-    .line 1922
+    .line 1938
     :goto_0
     return v1
 

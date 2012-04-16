@@ -37,11 +37,15 @@
 
 .field mDisabled:I
 
+.field mDockBatteryController:Lcom/android/systemui/statusbar/policy/DockBatteryController;
+
 .field mFakeSpaceBar:Landroid/view/View;
 
 .field mFeedbackIconArea:Landroid/view/ViewGroup;
 
 .field mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
+
+.field private mHasDockBattery:Z
 
 .field mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
@@ -137,64 +141,64 @@
 
     const/4 v0, -0x1
 
-    .line 92
+    .line 93
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBar;-><init>()V
 
-    .line 124
+    .line 125
     iput v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNaturalBarHeight:I
 
-    .line 125
+    .line 126
     iput v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconSize:I
 
-    .line 126
+    .line 127
     iput v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
-    .line 127
+    .line 128
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMaxNotificationIcons:I
 
-    .line 131
+    .line 132
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-direct {v0, p0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;Lcom/android/systemui/statusbar/tablet/TabletStatusBar$1;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
-    .line 136
+    .line 137
     new-instance v0, Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-direct {v0}, Lcom/android/systemui/statusbar/NotificationData;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
-    .line 185
+    .line 189
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSpaceBarKeyEvent:Landroid/view/KeyEvent;
 
-    .line 187
+    .line 191
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
-    .line 190
+    .line 194
     iput v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
-    .line 197
+    .line 201
     iput v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
-    .line 1290
+    .line 1306
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$4;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mOnClickListener:Landroid/view/View$OnClickListener;
 
-    .line 1879
+    .line 1895
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$5;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$5;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1904
+    .line 1920
     return-void
 .end method
 
@@ -203,7 +207,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     return-object v0
@@ -214,7 +218,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     return-object v0
@@ -226,7 +230,7 @@
     .parameter "x1"
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->animateCollapse(Z)V
 
     return-void
@@ -237,7 +241,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     return-object v0
@@ -250,7 +254,7 @@
     .parameter "x2"
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->inflateViews(Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/view/ViewGroup;)Z
 
     move-result v0
@@ -263,7 +267,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     return-object v0
@@ -274,7 +278,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     return-object v0
@@ -285,7 +289,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     return-object v0
@@ -297,7 +301,7 @@
     .parameter "x1"
 
     .prologue
-    .line 92
+    .line 93
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
     and-int/2addr v0, p1
@@ -313,7 +317,7 @@
     .parameter "x1"
 
     .prologue
-    .line 92
+    .line 93
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
     or-int/2addr v0, p1
@@ -328,7 +332,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->notifyUiVisibilityChanged()V
 
     return-void
@@ -339,7 +343,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->hideCompatibilityHelp()V
 
     return-void
@@ -358,51 +362,51 @@
 
     const/16 v1, 0x3e9
 
-    .line 1074
+    .line 1090
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1075
+    .line 1091
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1076
+    .line 1092
     if-nez p1, :cond_0
 
-    .line 1077
+    .line 1093
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1078
+    .line 1094
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1080
+    .line 1096
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1081
+    .line 1097
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1082
+    .line 1098
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1083
+    .line 1099
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1088
+    .line 1104
     return-void
 .end method
 
@@ -410,14 +414,14 @@
     .locals 5
 
     .prologue
-    .line 393
+    .line 400
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 394
+    .line 401
     .local v1, res:Landroid/content/res/Resources;
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
@@ -427,17 +431,17 @@
 
     move-result-object v0
 
-    .line 395
+    .line 402
     .local v0, d:Landroid/view/Display;
     new-instance v2, Landroid/graphics/Point;
 
     invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
 
-    .line 396
+    .line 403
     .local v2, size:Landroid/graphics/Point;
     invoke-virtual {v0, v2}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 397
+    .line 404
     const v3, 0x7f0a0027
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -458,7 +462,7 @@
     .parameter "n"
 
     .prologue
-    .line 1028
+    .line 1044
     iget-object v0, p1, Landroid/app/Notification;->tickerView:Landroid/widget/RemoteViews;
 
     if-nez v0, :cond_0
@@ -487,12 +491,12 @@
     .locals 2
 
     .prologue
-    .line 1200
+    .line 1216
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1201
+    .line 1217
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v0
@@ -501,12 +505,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManagerImpl;->removeView(Landroid/view/View;)V
 
-    .line 1202
+    .line 1218
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
-    .line 1204
+    .line 1220
     :cond_0
     return-void
 .end method
@@ -517,25 +521,25 @@
     .parameter
 
     .prologue
-    .line 1775
+    .line 1791
     iget-object v8, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 1776
+    .line 1792
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v9, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    .line 1777
+    .line 1793
     if-nez v9, :cond_0
 
-    .line 1778
+    .line 1794
     const/4 v0, 0x0
 
-    .line 1841
+    .line 1857
     :goto_0
     return v0
 
-    .line 1782
+    .line 1798
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -547,7 +551,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 1784
+    .line 1800
     const v1, 0x7f030013
 
     const/4 v2, 0x0
@@ -556,17 +560,17 @@
 
     move-result-object v10
 
-    .line 1785
+    .line 1801
     invoke-virtual {p0, v10}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->workAroundBadLayerDrawableOpacity(Landroid/view/View;)V
 
-    .line 1786
+    .line 1802
     iget-object v0, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
     invoke-virtual {p0, v10, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationVetoButton(Landroid/view/View;Lcom/android/internal/statusbar/StatusBarNotification;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1787
+    .line 1803
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     const v2, 0x7f08006a
@@ -577,8 +581,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1791
-    const v0, 0x7f0e006d
+    .line 1807
+    const v0, 0x7f0e006e
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -588,28 +592,28 @@
 
     check-cast v6, Landroid/widget/ImageView;
 
-    .line 1792
+    .line 1808
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->largeIcon:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
 
-    .line 1793
+    .line 1809
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->largeIcon:Landroid/graphics/Bitmap;
 
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 1794
+    .line 1810
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1799
+    .line 1815
     :goto_1
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
@@ -617,8 +621,8 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1802
-    const v0, 0x7f0e0062
+    .line 1818
+    const v0, 0x7f0e0063
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -628,20 +632,20 @@
 
     check-cast v7, Landroid/view/ViewGroup;
 
-    .line 1804
+    .line 1820
     const/high16 v0, 0x6
 
     invoke-virtual {v7, v0}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    .line 1806
+    .line 1822
     iget-object v0, v8, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v2, v0, Landroid/app/Notification;->contentIntent:Landroid/app/PendingIntent;
 
-    .line 1807
+    .line 1823
     if-eqz v2, :cond_2
 
-    .line 1808
+    .line 1824
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;
 
     iget-object v3, v8, Lcom/android/internal/statusbar/StatusBarNotification;->pkg:Ljava/lang/String;
@@ -654,20 +658,20 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;Landroid/app/PendingIntent;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1810
+    .line 1826
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1811
+    .line 1827
     invoke-virtual {v7, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1817
+    .line 1833
     :goto_2
     const/4 v1, 0x0
 
-    .line 1818
+    .line 1834
     const/4 v0, 0x0
 
-    .line 1820
+    .line 1836
     :try_start_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -677,11 +681,11 @@
 
     move-result-object v1
 
-    .line 1825
+    .line 1841
     :goto_3
     if-nez v1, :cond_3
 
-    .line 1826
+    .line 1842
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -712,7 +716,7 @@
 
     move-result-object v1
 
-    .line 1827
+    .line 1843
     const-string v2, "TabletStatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -735,12 +739,12 @@
 
     invoke-static {v2, v1, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1828
+    .line 1844
     const/4 v0, 0x0
 
     goto/16 :goto_0
 
-    .line 1796
+    .line 1812
     :cond_1
     invoke-virtual {v6}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -750,56 +754,56 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1797
+    .line 1813
     const/4 v0, 0x4
 
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 1813
+    .line 1829
     :cond_2
     const/4 v0, 0x0
 
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1814
+    .line 1830
     const/4 v0, 0x0
 
     invoke-virtual {v7, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_2
 
-    .line 1830
+    .line 1846
     :cond_3
     invoke-virtual {v7, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1831
+    .line 1847
     const/4 v0, 0x1
 
     invoke-virtual {v10, v0}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
-    .line 1834
+    .line 1850
     invoke-virtual {p0, v8, v7}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->applyLegacyRowBackground(Lcom/android/internal/statusbar/StatusBarNotification;Landroid/view/View;)V
 
-    .line 1836
+    .line 1852
     iput-object v10, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
-    .line 1837
+    .line 1853
     iput-object v7, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->content:Landroid/view/View;
 
-    .line 1838
+    .line 1854
     iput-object v1, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->expanded:Landroid/view/View;
 
-    .line 1839
+    .line 1855
     iput-object v6, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
 
-    .line 1841
+    .line 1857
     const/4 v0, 0x1
 
     goto/16 :goto_0
 
-    .line 1822
+    .line 1838
     :catch_0
     move-exception v0
 
@@ -810,7 +814,7 @@
     .locals 2
 
     .prologue
-    .line 1256
+    .line 1272
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -822,15 +826,15 @@
 
     move-result v1
 
-    .line 1260
+    .line 1276
     :goto_0
     return v1
 
-    .line 1258
+    .line 1274
     :catch_0
     move-exception v0
 
-    .line 1260
+    .line 1276
     .local v0, ex:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -841,20 +845,20 @@
     .locals 11
 
     .prologue
-    .line 1733
+    .line 1749
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v9}, Lcom/android/systemui/statusbar/NotificationData;->size()I
 
     move-result v0
 
-    .line 1735
+    .line 1751
     .local v0, N:I
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1737
+    .line 1753
     .local v7, toShow:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v2, 0x0
 
@@ -862,7 +866,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1738
+    .line 1754
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     sub-int v10, v0, v2
@@ -875,23 +879,23 @@
 
     iget-object v5, v9, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
-    .line 1739
+    .line 1755
     .local v5, row:Landroid/view/View;
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1737
+    .line 1753
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1742
+    .line 1758
     .end local v5           #row:Landroid/view/View;
     :cond_0
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1743
+    .line 1759
     .local v6, toRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v2, 0x0
 
@@ -904,14 +908,14 @@
 
     if-ge v2, v9, :cond_2
 
-    .line 1744
+    .line 1760
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
     invoke-virtual {v9, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1745
+    .line 1761
     .local v1, child:Landroid/view/View;
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -919,16 +923,16 @@
 
     if-nez v9, :cond_1
 
-    .line 1746
+    .line 1762
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1743
+    .line 1759
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1750
+    .line 1766
     .end local v1           #child:Landroid/view/View;
     :cond_2
     invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -949,7 +953,7 @@
 
     check-cast v4, Landroid/view/View;
 
-    .line 1751
+    .line 1767
     .local v4, remove:Landroid/view/View;
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
@@ -957,7 +961,7 @@
 
     goto :goto_2
 
-    .line 1754
+    .line 1770
     .end local v4           #remove:Landroid/view/View;
     :cond_3
     const/4 v2, 0x0
@@ -969,14 +973,14 @@
 
     if-ge v2, v9, :cond_5
 
-    .line 1755
+    .line 1771
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/view/View;
 
-    .line 1756
+    .line 1772
     .local v8, v:Landroid/view/View;
     invoke-virtual {v8}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -984,7 +988,7 @@
 
     if-nez v9, :cond_4
 
-    .line 1757
+    .line 1773
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
     add-int/lit8 v10, v0, -0x1
@@ -993,20 +997,20 @@
 
     invoke-virtual {v9, v8, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 1754
+    .line 1770
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 1761
+    .line 1777
     .end local v8           #v:Landroid/view/View;
     :cond_5
     iget-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     invoke-virtual {v9, v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->setNotificationCount(I)V
 
-    .line 1762
+    .line 1778
     return-void
 .end method
 
@@ -1014,7 +1018,7 @@
     .locals 2
 
     .prologue
-    .line 1110
+    .line 1126
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mWindowManager:Landroid/view/IWindowManager;
 
@@ -1024,11 +1028,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1113
+    .line 1129
     :goto_0
     return-void
 
-    .line 1111
+    .line 1127
     :catch_0
     move-exception v0
 
@@ -1039,22 +1043,22 @@
     .locals 1
 
     .prologue
-    .line 1643
+    .line 1659
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     if-nez v0, :cond_0
 
-    .line 1646
+    .line 1662
     :goto_0
     return-void
 
-    .line 1644
+    .line 1660
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->removeAllViews()V
 
-    .line 1645
+    .line 1661
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationIcons()V
 
     goto :goto_0
@@ -1064,12 +1068,12 @@
     .locals 2
 
     .prologue
-    .line 1265
+    .line 1281
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     if-eqz v0, :cond_0
 
-    .line 1266
+    .line 1282
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
@@ -1080,7 +1084,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->setClearable(Z)V
 
-    .line 1268
+    .line 1284
     :cond_0
     return-void
 .end method
@@ -1096,7 +1100,7 @@
 
     const/4 v2, 0x0
 
-    .line 1015
+    .line 1031
     const/high16 v0, 0x20
 
     and-int/2addr v0, p1
@@ -1105,7 +1109,7 @@
 
     move v5, v1
 
-    .line 1016
+    .line 1032
     :goto_0
     const/high16 v0, 0x100
 
@@ -1115,7 +1119,7 @@
 
     move v4, v1
 
-    .line 1017
+    .line 1033
     :goto_1
     const/high16 v0, 0x40
 
@@ -1125,7 +1129,7 @@
 
     move v0, v1
 
-    .line 1019
+    .line 1035
     :goto_2
     iget-object v6, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBackButton:Landroid/widget/ImageView;
 
@@ -1136,7 +1140,7 @@
     :goto_3
     invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1020
+    .line 1036
     iget-object v6, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHomeButton:Landroid/view/View;
 
     if-eqz v5, :cond_4
@@ -1146,7 +1150,7 @@
     :goto_4
     invoke-virtual {v6, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1021
+    .line 1037
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentButton:Landroid/view/View;
 
     if-eqz v4, :cond_5
@@ -1154,7 +1158,7 @@
     :goto_5
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1023
+    .line 1039
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     const/high16 v3, 0x10
@@ -1166,49 +1170,49 @@
     :goto_6
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/InputMethodButton;->setScreenLocked(Z)V
 
-    .line 1025
+    .line 1041
     return-void
 
     :cond_0
     move v5, v2
 
-    .line 1015
+    .line 1031
     goto :goto_0
 
     :cond_1
     move v4, v2
 
-    .line 1016
+    .line 1032
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 1017
+    .line 1033
     goto :goto_2
 
     :cond_3
     move v0, v2
 
-    .line 1019
+    .line 1035
     goto :goto_3
 
     :cond_4
     move v0, v2
 
-    .line 1020
+    .line 1036
     goto :goto_4
 
     :cond_5
     move v3, v2
 
-    .line 1021
+    .line 1037
     goto :goto_5
 
     :cond_6
     move v1, v2
 
-    .line 1023
+    .line 1039
     goto :goto_6
 .end method
 
@@ -1218,16 +1222,16 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1166
+    .line 1182
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1197
+    .line 1213
     :goto_0
     return-void
 
-    .line 1170
+    .line 1186
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -1241,7 +1245,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
-    .line 1171
+    .line 1187
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatibilityHelpDialog:Landroid/view/View;
 
     const v2, 0x7f0e0008
@@ -1250,14 +1254,14 @@
 
     move-result-object v0
 
-    .line 1173
+    .line 1189
     new-instance v2, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$3;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$3;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1183
+    .line 1199
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     const/16 v3, 0x7d8
@@ -1270,22 +1274,22 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 1191
+    .line 1207
     const-string v1, "CompatibilityModeDialog"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 1192
+    .line 1208
     const/16 v1, 0x31
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1194
+    .line 1210
     const v1, 0x10301e3
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 1196
+    .line 1212
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -1304,7 +1308,7 @@
     .parameter
 
     .prologue
-    .line 1033
+    .line 1049
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->isShowing()Z
@@ -1313,12 +1317,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 1052
+    .line 1068
     :cond_0
     :goto_0
     return-void
 
-    .line 1038
+    .line 1054
     :cond_1
     if-nez p3, :cond_2
 
@@ -1330,7 +1334,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1045
+    .line 1061
     :cond_2
     iget-object v0, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
@@ -1348,7 +1352,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1046
+    .line 1062
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
     const/high16 v1, 0xa
@@ -1357,12 +1361,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1048
+    .line 1064
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/tablet/TabletTicker;->add(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;)V
 
-    .line 1049
+    .line 1065
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mFeedbackIconArea:Landroid/view/ViewGroup;
 
     const/16 v1, 0x8
@@ -1382,21 +1386,21 @@
 
     const/4 v2, 0x0
 
-    .line 1652
+    .line 1668
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     if-nez v0, :cond_1
 
-    .line 1730
+    .line 1746
     :cond_0
     :goto_0
     return-void
 
-    .line 1655
+    .line 1671
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->loadNotificationPanel()V
 
-    .line 1657
+    .line 1673
     new-instance v7, Landroid/widget/LinearLayout$LayoutParams;
 
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconSize:I
@@ -1411,12 +1415,12 @@
 
     invoke-direct {v7, v0, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 1661
+    .line 1677
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationDNDMode:Z
 
     if-eqz v0, :cond_2
 
-    .line 1662
+    .line 1678
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->getChildCount()I
@@ -1425,7 +1429,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1663
+    .line 1679
     new-instance v0, Landroid/app/Notification$Builder;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -1470,7 +1474,7 @@
 
     move-result-object v6
 
-    .line 1670
+    .line 1686
     new-instance v8, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -1479,22 +1483,22 @@
 
     invoke-direct {v8, v0, v1, v6}, Lcom/android/systemui/statusbar/StatusBarIconView;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/app/Notification;)V
 
-    .line 1672
+    .line 1688
     invoke-virtual {v8, v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->setImageResource(I)V
 
-    .line 1673
+    .line 1689
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v8, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1674
+    .line 1690
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
     iget v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
     invoke-virtual {v8, v0, v2, v1, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setPadding(IIII)V
 
-    .line 1676
+    .line 1692
     new-instance v9, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     const/4 v10, 0x0
@@ -1515,14 +1519,14 @@
 
     iput-object v9, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationDNDDummyEntry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 1681
+    .line 1697
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v0, v8, v7}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    .line 1685
+    .line 1701
     :cond_2
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
@@ -1532,22 +1536,22 @@
 
     if-nez v0, :cond_0
 
-    .line 1691
+    .line 1707
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationData;->size()I
 
     move-result v3
 
-    .line 1697
+    .line 1713
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1702
+    .line 1718
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMaxNotificationIcons:I
 
-    .line 1703
+    .line 1719
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/tablet/InputMethodButton;->getVisibility()I
@@ -1558,7 +1562,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1704
+    .line 1720
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
@@ -1573,14 +1577,14 @@
     :cond_4
     move v1, v2
 
-    .line 1706
+    .line 1722
     :goto_1
     if-ge v1, v0, :cond_5
 
-    .line 1707
+    .line 1723
     if-lt v1, v3, :cond_7
 
-    .line 1711
+    .line 1727
     :cond_5
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1588,7 +1592,7 @@
 
     move v0, v2
 
-    .line 1712
+    .line 1728
     :goto_2
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
@@ -1598,30 +1602,30 @@
 
     if-ge v0, v3, :cond_8
 
-    .line 1713
+    .line 1729
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v3, v0}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1714
+    .line 1730
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_6
 
-    .line 1715
+    .line 1731
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1712
+    .line 1728
     :cond_6
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 1708
+    .line 1724
     :cond_7
     iget-object v5, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
@@ -1637,12 +1641,12 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1706
+    .line 1722
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1719
+    .line 1735
     :cond_8
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1661,7 +1665,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 1720
+    .line 1736
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v3, v0}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->removeView(Landroid/view/View;)V
@@ -1671,7 +1675,7 @@
     :cond_9
     move v1, v2
 
-    .line 1723
+    .line 1739
     :goto_4
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -1679,33 +1683,33 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 1724
+    .line 1740
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    .line 1725
+    .line 1741
     iget v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
     iget v5, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
     invoke-virtual {v0, v3, v2, v5, v2}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1726
+    .line 1742
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     if-nez v3, :cond_a
 
-    .line 1727
+    .line 1743
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
     invoke-virtual {v3, v0, v1, v7}, Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1723
+    .line 1739
     :cond_a
     add-int/lit8 v0, v1, 0x1
 
@@ -1724,7 +1728,7 @@
     .parameter "icon"
 
     .prologue
-    .line 801
+    .line 817
     return-void
 .end method
 
@@ -1734,27 +1738,27 @@
     .parameter
 
     .prologue
-    .line 814
+    .line 830
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->addNotificationViews(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;)Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 816
+    .line 832
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->isImmersive()Z
 
-    .line 819
+    .line 835
     iget-object v0, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->fullScreenIntent:Landroid/app/PendingIntent;
 
     if-eqz v0, :cond_0
 
-    .line 821
+    .line 837
     const-string v0, "TabletStatusBar"
 
     const-string v1, "Notification has fullScreenIntent and activity is not immersive; sending fullScreenIntent"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 824
+    .line 840
     :try_start_0
     iget-object v0, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
@@ -1764,14 +1768,14 @@
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 831
+    .line 847
     :goto_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setAreThereNotifications()V
 
-    .line 832
+    .line 848
     return-void
 
-    .line 828
+    .line 844
     :cond_0
     const/4 v0, 0x1
 
@@ -1779,7 +1783,7 @@
 
     goto :goto_0
 
-    .line 825
+    .line 841
     :catch_0
     move-exception v0
 
@@ -1794,7 +1798,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1610
+    .line 1626
     new-instance v7, Lcom/android/systemui/statusbar/StatusBarIconView;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -1833,12 +1837,12 @@
 
     invoke-direct {v7, v0, v1, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/app/Notification;)V
 
-    .line 1613
+    .line 1629
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v7, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1615
+    .line 1631
     new-instance v0, Lcom/android/internal/statusbar/StatusBarIcon;
 
     iget-object v1, p2, Lcom/android/internal/statusbar/StatusBarNotification;->pkg:Ljava/lang/String;
@@ -1861,14 +1865,14 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/statusbar/StatusBarIcon;-><init>(Ljava/lang/String;IIILjava/lang/CharSequence;)V
 
-    .line 1620
+    .line 1636
     invoke-virtual {v7, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1621
+    .line 1637
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1891,17 +1895,17 @@
 
     move-object v0, v6
 
-    .line 1639
+    .line 1655
     :goto_0
     return-object v0
 
-    .line 1625
+    .line 1641
     :cond_0
     new-instance v0, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     invoke-direct {v0, p1, p2, v7}, Lcom/android/systemui/statusbar/NotificationData$Entry;-><init>(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;Lcom/android/systemui/statusbar/StatusBarIconView;)V
 
-    .line 1626
+    .line 1642
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->inflateViews(Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/view/ViewGroup;)Z
@@ -1910,7 +1914,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1627
+    .line 1643
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1933,21 +1937,21 @@
 
     move-object v0, v6
 
-    .line 1629
+    .line 1645
     goto :goto_0
 
-    .line 1633
+    .line 1649
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/NotificationData;->add(Lcom/android/systemui/statusbar/NotificationData$Entry;)I
 
-    .line 1637
+    .line 1653
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationIcons()V
 
     move-object v0, v7
 
-    .line 1639
+    .line 1655
     goto :goto_0
 .end method
 
@@ -1965,10 +1969,10 @@
 
     const/4 v5, -0x3
 
-    .line 206
+    .line 210
     iget-object v6, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
-    .line 207
+    .line 211
     .local v6, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -1976,7 +1980,7 @@
 
     move-result-object v8
 
-    .line 210
+    .line 214
     .local v8, res:Landroid/content/res/Resources;
     const v1, 0x7f030010
 
@@ -1988,17 +1992,17 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
-    .line 212
+    .line 216
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->setBar(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
-    .line 213
+    .line 217
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     invoke-virtual {v1, v13, v13}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->show(ZZ)V
 
-    .line 214
+    .line 218
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     new-instance v2, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;
@@ -2011,7 +2015,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 218
+    .line 222
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
@@ -2026,7 +2030,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/BatteryController;->addIconView(Landroid/widget/ImageView;)V
 
-    .line 219
+    .line 223
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
@@ -2041,7 +2045,28 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/BatteryController;->addLabelView(Landroid/widget/TextView;)V
 
-    .line 223
+    .line 226
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHasDockBattery:Z
+
+    if-eqz v1, :cond_0
+
+    .line 227
+    iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDockBatteryController:Lcom/android/systemui/statusbar/policy/DockBatteryController;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
+
+    const v4, 0x7f0e005e
+
+    invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/DockBatteryController;->addIconView(Landroid/widget/ImageView;)V
+
+    .line 230
+    :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
@@ -2056,7 +2081,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/BluetoothController;->addIconView(Landroid/widget/ImageView;)V
 
-    .line 227
+    .line 234
     const-string v1, "storage"
 
     invoke-virtual {v6, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2067,7 +2092,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStorageManager:Landroid/os/storage/StorageManager;
 
-    .line 228
+    .line 235
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStorageManager:Landroid/os/storage/StorageManager;
 
     new-instance v2, Lcom/android/systemui/usb/StorageNotification;
@@ -2076,7 +2101,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/storage/StorageManager;->registerListener(Landroid/os/storage/StorageEventListener;)V
 
-    .line 233
+    .line 240
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     const v2, 0x7f0e0024
@@ -2087,17 +2112,17 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    .line 235
+    .line 242
     .local v7, mobileRSSI:Landroid/widget/ImageView;
-    if-eqz v7, :cond_0
+    if-eqz v7, :cond_1
 
-    .line 236
+    .line 243
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-virtual {v1, v7}, Lcom/android/systemui/statusbar/policy/NetworkController;->addPhoneSignalIconView(Landroid/widget/ImageView;)V
 
-    .line 238
-    :cond_0
+    .line 245
+    :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
     const v2, 0x7f0e0020
@@ -2108,22 +2133,22 @@
 
     check-cast v9, Landroid/widget/ImageView;
 
-    .line 240
+    .line 247
     .local v9, wifiRSSI:Landroid/widget/ImageView;
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_2
 
-    .line 241
+    .line 248
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-virtual {v1, v9}, Lcom/android/systemui/statusbar/policy/NetworkController;->addWifiIconView(Landroid/widget/ImageView;)V
 
-    .line 243
-    :cond_1
+    .line 250
+    :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
-    const v4, 0x7f0e0068
+    const v4, 0x7f0e0069
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -2133,7 +2158,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addWifiLabelView(Landroid/widget/TextView;)V
 
-    .line 246
+    .line 253
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
@@ -2148,12 +2173,12 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addDataTypeIconView(Landroid/widget/ImageView;)V
 
-    .line 248
+    .line 255
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
-    const v4, 0x7f0e0065
+    const v4, 0x7f0e0066
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -2163,7 +2188,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addMobileLabelView(Landroid/widget/TextView;)V
 
-    .line 250
+    .line 257
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarContents:Landroid/view/ViewGroup;
@@ -2178,7 +2203,7 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addCombinedLabelView(Landroid/widget/TextView;)V
 
-    .line 253
+    .line 260
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationTrigger:Landroid/view/View;
@@ -2187,7 +2212,7 @@
 
     invoke-virtual {v1, v13, v2, v4}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->setIgnoreChildren(ILandroid/view/View;Landroid/view/View;)V
 
-    .line 255
+    .line 262
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     const v1, 0x7f0a0026
@@ -2206,28 +2231,28 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanelParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 265
+    .line 272
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x55
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 266
+    .line 273
     const-string v1, "NotificationPanel"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 267
+    .line 274
     const/16 v1, 0x31
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 269
+    .line 276
     const/high16 v1, 0x103
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 272
+    .line 279
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -2236,14 +2261,14 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/WindowManagerImpl;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 316
+    .line 323
     new-instance v1, Lcom/android/systemui/recent/RecentTasksLoader;
 
     invoke-direct {v1, v6}, Lcom/android/systemui/recent/RecentTasksLoader;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentTasksLoader:Lcom/android/systemui/recent/RecentTasksLoader;
 
-    .line 317
+    .line 324
     const v1, 0x7f030016
 
     invoke-static {v6, v1, v11}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -2254,21 +2279,21 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
-    .line 319
+    .line 326
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setVisibility(I)V
 
-    .line 320
+    .line 327
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     const/high16 v2, 0x40
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setSystemUiVisibility(I)V
 
-    .line 321
+    .line 328
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     new-instance v2, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;
@@ -2281,21 +2306,21 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 323
+    .line 330
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentTasksLoader:Lcom/android/systemui/recent/RecentTasksLoader;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setRecentTasksLoader(Lcom/android/systemui/recent/RecentTasksLoader;)V
 
-    .line 324
+    .line 331
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentTasksLoader:Lcom/android/systemui/recent/RecentTasksLoader;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentTasksLoader;->setRecentsPanel(Lcom/android/systemui/recent/RecentsPanelView;)V
 
-    .line 325
+    .line 332
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
     const/4 v2, 0x2
@@ -2306,7 +2331,7 @@
 
     invoke-virtual {v1, v2, v4, v10}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->setIgnoreChildren(ILandroid/view/View;Landroid/view/View;)V
 
-    .line 327
+    .line 334
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     .end local v0           #lp:Landroid/view/WindowManager$LayoutParams;
@@ -2324,28 +2349,28 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 336
+    .line 343
     .restart local v0       #lp:Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x53
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 337
+    .line 344
     const-string v1, "RecentsPanel"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 338
+    .line 345
     const v1, 0x7f0c000a
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 339
+    .line 346
     const/16 v1, 0x31
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 342
+    .line 349
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -2354,12 +2379,12 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/WindowManagerImpl;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 343
+    .line 350
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/recent/RecentsPanelView;->setBar(Lcom/android/systemui/statusbar/StatusBar;)V
 
-    .line 346
+    .line 353
     const v1, 0x7f03000d
 
     invoke-static {v6, v1, v11}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -2370,12 +2395,12 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
-    .line 348
+    .line 355
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->setHardKeyboardEnabledChangeListener(Lcom/android/systemui/statusbar/tablet/InputMethodsPanel$OnHardKeyboardEnabledChangeListener;)V
 
-    .line 349
+    .line 356
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     new-instance v2, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;
@@ -2388,14 +2413,14 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 351
+    .line 358
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->setImeSwitchButton(Lcom/android/systemui/statusbar/tablet/InputMethodButton;)V
 
-    .line 352
+    .line 359
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
     const/4 v2, 0x3
@@ -2406,7 +2431,7 @@
 
     invoke-virtual {v1, v2, v4, v10}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->setIgnoreChildren(ILandroid/view/View;Landroid/view/View;)V
 
-    .line 353
+    .line 360
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     .end local v0           #lp:Landroid/view/WindowManager$LayoutParams;
@@ -2418,23 +2443,23 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 362
+    .line 369
     .restart local v0       #lp:Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x55
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 363
+    .line 370
     const-string v1, "InputMethodsPanel"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 364
+    .line 371
     const v1, 0x7f0c000a
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 366
+    .line 373
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -2443,7 +2468,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/WindowManagerImpl;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 369
+    .line 376
     const v1, 0x7f030009
 
     invoke-static {v6, v1, v11}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -2454,7 +2479,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
-    .line 371
+    .line 378
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     new-instance v2, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$TouchOutsideListener;
@@ -2467,21 +2492,21 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/CompatModePanel;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 373
+    .line 380
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/CompatModePanel;->setTrigger(Landroid/view/View;)V
 
-    .line 374
+    .line 381
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/tablet/CompatModePanel;->setVisibility(I)V
 
-    .line 375
+    .line 382
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
     const/4 v2, 0x4
@@ -2492,7 +2517,7 @@
 
     invoke-virtual {v1, v2, v4, v10}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->setIgnoreChildren(ILandroid/view/View;Landroid/view/View;)V
 
-    .line 376
+    .line 383
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     .end local v0           #lp:Landroid/view/WindowManager$LayoutParams;
@@ -2504,23 +2529,23 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 385
+    .line 392
     .restart local v0       #lp:Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x55
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 386
+    .line 393
     const-string v1, "CompatModePanel"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 387
+    .line 394
     const v1, 0x1030002
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 389
+    .line 396
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -2529,7 +2554,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/WindowManagerImpl;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 390
+    .line 397
     return-void
 .end method
 
@@ -2537,12 +2562,12 @@
     .locals 1
 
     .prologue
-    .line 1070
+    .line 1086
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->animateCollapse(Z)V
 
-    .line 1071
+    .line 1087
     return-void
 .end method
 
@@ -2552,17 +2577,17 @@
     .prologue
     const/16 v1, 0x3e8
 
-    .line 1065
+    .line 1081
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1066
+    .line 1082
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1067
+    .line 1083
     return-void
 .end method
 
@@ -2574,7 +2599,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1845
+    .line 1861
     iget-object v0, p1, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
@@ -2587,7 +2612,7 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 1849
+    .line 1865
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -2603,12 +2628,12 @@
 
     move-result-object v0
 
-    .line 1850
+    .line 1866
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1854
+    .line 1870
     :goto_0
     if-lez v0, :cond_1
 
@@ -2616,21 +2641,21 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1855
+    .line 1871
     const v0, 0x7f020038
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1860
+    .line 1876
     :cond_0
     :goto_1
     return-void
 
-    .line 1851
+    .line 1867
     :catch_0
     move-exception v0
 
-    .line 1852
+    .line 1868
     const-string v2, "TabletStatusBar"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2659,7 +2684,7 @@
 
     goto :goto_0
 
-    .line 1857
+    .line 1873
     :cond_1
     const v0, 0x7f020037
 
@@ -2672,7 +2697,7 @@
     .locals 1
 
     .prologue
-    .line 1864
+    .line 1880
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -2680,19 +2705,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1868
+    .line 1884
     :goto_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->animateCollapse()V
 
-    .line 1869
+    .line 1885
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->visibilityChanged(Z)V
 
-    .line 1870
+    .line 1886
     return-void
 
-    .line 1865
+    .line 1881
     :catch_0
     move-exception v0
 
@@ -2714,23 +2739,23 @@
 
     const/4 v2, 0x0
 
-    .line 961
+    .line 977
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
-    .line 962
+    .line 978
     xor-int v4, p1, v0
 
-    .line 963
+    .line 979
     iput p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
-    .line 966
+    .line 982
     const/high16 v0, 0x80
 
     and-int/2addr v0, v4
 
     if-eqz v0, :cond_0
 
-    .line 967
+    .line 983
     const/high16 v0, 0x80
 
     and-int/2addr v0, p1
@@ -2739,7 +2764,7 @@
 
     move v0, v1
 
-    .line 968
+    .line 984
     :goto_0
     const-string v5, "TabletStatusBar"
 
@@ -2768,10 +2793,10 @@
 
     invoke-static {v5, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 969
+    .line 985
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->showClock(Z)V
 
-    .line 971
+    .line 987
     :cond_0
     const/high16 v0, 0x10
 
@@ -2779,14 +2804,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 972
+    .line 988
     const/high16 v0, 0x10
 
     and-int/2addr v0, p1
 
     if-nez v0, :cond_7
 
-    .line 973
+    .line 989
     :goto_2
     const-string v3, "TabletStatusBar"
 
@@ -2815,7 +2840,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 974
+    .line 990
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationTrigger:Landroid/view/View;
 
     if-eqz v1, :cond_9
@@ -2825,37 +2850,37 @@
     :goto_4
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 976
+    .line 992
     :cond_1
     and-int v0, v4, v8
 
     if-eqz v0, :cond_2
 
-    .line 977
+    .line 993
     and-int v0, p1, v8
 
     if-eqz v0, :cond_2
 
-    .line 978
+    .line 994
     const-string v0, "TabletStatusBar"
 
     const-string v1, "DISABLE_EXPAND: yes"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 979
+    .line 995
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->animateCollapse()V
 
-    .line 980
+    .line 996
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->visibilityChanged(Z)V
 
-    .line 983
+    .line 999
     :cond_2
     and-int v0, v4, v9
 
     if-eqz v0, :cond_d
 
-    .line 984
+    .line 1000
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/Prefs;->read(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -2870,12 +2895,12 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationDNDMode:Z
 
-    .line 987
+    .line 1003
     and-int v0, p1, v9
 
     if-eqz v0, :cond_b
 
-    .line 988
+    .line 1004
     const-string v1, "TabletStatusBar"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2905,16 +2930,16 @@
 
     invoke-static {v1, v0}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 989
+    .line 1005
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletTicker;->halt()V
 
-    .line 995
+    .line 1011
     :goto_6
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->reloadAllNotificationIcons()V
 
-    .line 1001
+    .line 1017
     :cond_3
     :goto_7
     const/high16 v0, 0x160
@@ -2923,37 +2948,37 @@
 
     if-eqz v0, :cond_4
 
-    .line 1004
+    .line 1020
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setNavigationVisibility(I)V
 
-    .line 1006
+    .line 1022
     const/high16 v0, 0x100
 
     and-int/2addr v0, p1
 
     if-eqz v0, :cond_4
 
-    .line 1008
+    .line 1024
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v7}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1009
+    .line 1025
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v7}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1012
+    .line 1028
     :cond_4
     return-void
 
     :cond_5
     move v0, v2
 
-    .line 967
+    .line 983
     goto/16 :goto_0
 
-    .line 968
+    .line 984
     :cond_6
     const-string v3, "yes"
 
@@ -2962,28 +2987,28 @@
     :cond_7
     move v1, v2
 
-    .line 972
+    .line 988
     goto/16 :goto_2
 
-    .line 973
+    .line 989
     :cond_8
     const-string v0, "yes"
 
     goto/16 :goto_3
 
-    .line 974
+    .line 990
     :cond_9
     const/16 v0, 0x8
 
     goto :goto_4
 
-    .line 988
+    .line 1004
     :cond_a
     const-string v0, ""
 
     goto :goto_5
 
-    .line 991
+    .line 1007
     :cond_b
     const-string v1, "TabletStatusBar"
 
@@ -3021,7 +3046,7 @@
 
     goto :goto_8
 
-    .line 996
+    .line 1012
     :cond_d
     const/high16 v0, 0x8
 
@@ -3029,14 +3054,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 997
+    .line 1013
     const/high16 v0, 0x8
 
     and-int/2addr v0, p1
 
     if-eqz v0, :cond_3
 
-    .line 998
+    .line 1014
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletTicker;->halt()V
@@ -3048,14 +3073,14 @@
     .locals 2
 
     .prologue
-    .line 1056
+    .line 1072
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mFeedbackIconArea:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1057
+    .line 1073
     return-void
 .end method
 
@@ -3066,12 +3091,12 @@
     .parameter
 
     .prologue
-    .line 1927
+    .line 1943
     const-string v0, "mDisabled=0x"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1928
+    .line 1944
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -3080,17 +3105,17 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1929
+    .line 1945
     const-string v0, "mNetworkController:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1930
+    .line 1946
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/systemui/statusbar/policy/NetworkController;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 1931
+    .line 1947
     return-void
 .end method
 
@@ -3098,7 +3123,7 @@
     .locals 1
 
     .prologue
-    .line 201
+    .line 205
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -3108,7 +3133,7 @@
     .locals 1
 
     .prologue
-    .line 635
+    .line 651
     const/16 v0, 0x57
 
     return v0
@@ -3118,7 +3143,7 @@
     .locals 1
 
     .prologue
-    .line 631
+    .line 647
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/HeightReceiver;->getHeight()I
@@ -3135,10 +3160,10 @@
     .parameter "message"
 
     .prologue
-    .line 1274
+    .line 1290
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->removeNotification(Landroid/os/IBinder;)V
 
-    .line 1276
+    .line 1292
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -3158,11 +3183,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1280
+    .line 1296
     :goto_0
     return-void
 
-    .line 1277
+    .line 1293
     :catch_0
     move-exception v0
 
@@ -3173,14 +3198,14 @@
     .locals 5
 
     .prologue
-    .line 416
+    .line 423
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 418
+    .line 425
     .local v3, res:Landroid/content/res/Resources;
     const v4, 0x105000b
 
@@ -3190,14 +3215,14 @@
 
     iput v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNaturalBarHeight:I
 
-    .line 421
+    .line 428
     const v4, 0x1050010
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    .line 423
+    .line 430
     .local v1, newIconSize:I
     const v4, 0x7f0a0010
 
@@ -3205,7 +3230,7 @@
 
     move-result v0
 
-    .line 426
+    .line 433
     .local v0, newIconHPadding:I
     iget v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
@@ -3215,17 +3240,17 @@
 
     if-eq v1, v4, :cond_1
 
-    .line 428
+    .line 435
     :cond_0
     iput v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconHPadding:I
 
-    .line 429
+    .line 436
     iput v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconSize:I
 
-    .line 430
+    .line 437
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->reloadAllNotificationIcons()V
 
-    .line 433
+    .line 440
     :cond_1
     const/high16 v4, 0x7f09
 
@@ -3233,19 +3258,19 @@
 
     move-result v2
 
-    .line 434
+    .line 441
     .local v2, numIcons:I
     iget v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMaxNotificationIcons:I
 
     if-eq v2, v4, :cond_2
 
-    .line 435
+    .line 442
     iput v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMaxNotificationIcons:I
 
-    .line 437
+    .line 444
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->reloadAllNotificationIcons()V
 
-    .line 439
+    .line 446
     :cond_2
     return-void
 .end method
@@ -3258,7 +3283,7 @@
     .parameter "id"
 
     .prologue
-    .line 1328
+    .line 1344
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;
 
     move-object v1, p0
@@ -3290,10 +3315,10 @@
 
     const/4 v6, 0x2
 
-    .line 442
+    .line 449
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
-    .line 444
+    .line 451
     const-string v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -3306,7 +3331,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mWindowManager:Landroid/view/IWindowManager;
 
-    .line 449
+    .line 456
     new-instance v0, Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -3315,15 +3340,15 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
-    .line 450
+    .line 457
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/HeightReceiver;->registerReceiver()V
 
-    .line 451
+    .line 458
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->loadDimens()V
 
-    .line 453
+    .line 460
     const v0, 0x7f030008
 
     invoke-static {v2, v0, v10}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -3332,15 +3357,15 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
-    .line 455
+    .line 462
     iput-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
-    .line 457
+    .line 464
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->setHandler(Landroid/os/Handler;)V
 
-    .line 462
+    .line 469
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mWindowManager:Landroid/view/IWindowManager;
 
@@ -3350,7 +3375,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 463
+    .line 470
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v3, "Tablet device cannot show navigation bar and system bar"
@@ -3361,11 +3386,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 466
+    .line 473
     :catch_0
     move-exception v1
 
-    .line 469
+    .line 476
     :cond_0
     const v1, 0x7f0e0035
 
@@ -3377,7 +3402,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarContents:Landroid/view/ViewGroup;
 
-    .line 472
+    .line 479
     const v1, 0x7f0e0038
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3386,7 +3411,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationArea:Landroid/view/View;
 
-    .line 474
+    .line 481
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationArea:Landroid/view/View;
 
     new-instance v3, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationTriggerTouchListener;
@@ -3395,7 +3420,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 478
+    .line 485
     const v1, 0x7f0e005a
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3404,7 +3429,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationTrigger:Landroid/view/View;
 
-    .line 484
+    .line 491
     const v1, 0x7f0e0029
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3415,7 +3440,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationIconArea:Lcom/android/systemui/statusbar/tablet/NotificationIconArea;
 
-    .line 487
+    .line 494
     const v1, 0x7f0e0027
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3426,29 +3451,29 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mIconLayout:Lcom/android/systemui/statusbar/tablet/NotificationIconArea$IconLayout;
 
-    .line 492
+    .line 499
     invoke-static {v2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
-    .line 493
+    .line 500
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPeekTapDuration:I
 
-    .line 494
+    .line 501
     const/16 v1, 0x12c
 
     iput v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationFlingVelocity:I
 
-    .line 496
+    .line 503
     new-instance v1, Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/tablet/TabletTicker;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
-    .line 499
+    .line 506
     new-instance v1, Lcom/android/systemui/statusbar/policy/LocationController;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -3457,7 +3482,22 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mLocationController:Lcom/android/systemui/statusbar/policy/LocationController;
 
-    .line 501
+    .line 508
+    iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v3, 0x1110036
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHasDockBattery:Z
+
+    .line 511
     new-instance v1, Lcom/android/systemui/statusbar/policy/BatteryController;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -3466,7 +3506,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
-    .line 502
+    .line 512
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     const v1, 0x7f0e002f
@@ -3479,7 +3519,7 @@
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/policy/BatteryController;->addIconView(Landroid/widget/ImageView;)V
 
-    .line 503
+    .line 513
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
     const v1, 0x7f0e002e
@@ -3492,7 +3532,35 @@
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/policy/BatteryController;->addLabelView(Landroid/widget/TextView;)V
 
-    .line 505
+    .line 516
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHasDockBattery:Z
+
+    if-eqz v1, :cond_1
+
+    .line 517
+    new-instance v1, Lcom/android/systemui/statusbar/policy/DockBatteryController;
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v3}, Lcom/android/systemui/statusbar/policy/DockBatteryController;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDockBatteryController:Lcom/android/systemui/statusbar/policy/DockBatteryController;
+
+    .line 518
+    iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDockBatteryController:Lcom/android/systemui/statusbar/policy/DockBatteryController;
+
+    const v1, 0x7f0e005e
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/policy/DockBatteryController;->addIconView(Landroid/widget/ImageView;)V
+
+    .line 521
+    :cond_1
     new-instance v1, Lcom/android/systemui/statusbar/policy/BluetoothController;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -3501,7 +3569,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
 
-    .line 506
+    .line 522
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
 
     const v1, 0x7f0e005d
@@ -3514,7 +3582,7 @@
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/policy/BluetoothController;->addIconView(Landroid/widget/ImageView;)V
 
-    .line 508
+    .line 524
     new-instance v1, Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
@@ -3523,7 +3591,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
-    .line 509
+    .line 525
     const v1, 0x7f0e002c
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3532,12 +3600,12 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/SignalClusterView;
 
-    .line 511
+    .line 527
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNetworkController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addSignalCluster(Lcom/android/systemui/statusbar/policy/NetworkController$SignalCluster;)V
 
-    .line 514
+    .line 530
     const v1, 0x7f0e0011
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3548,7 +3616,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBackButton:Landroid/widget/ImageView;
 
-    .line 515
+    .line 531
     const v1, 0x7f0e0036
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3559,7 +3627,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
-    .line 516
+    .line 532
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
     const v3, 0x7f0e0012
@@ -3570,7 +3638,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHomeButton:Landroid/view/View;
 
-    .line 517
+    .line 533
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
     const v3, 0x7f0e0014
@@ -3581,7 +3649,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMenuButton:Landroid/view/View;
 
-    .line 518
+    .line 534
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
     const v3, 0x7f0e0013
@@ -3592,49 +3660,49 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentButton:Landroid/view/View;
 
-    .line 519
+    .line 535
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentButton:Landroid/view/View;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mOnClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 521
+    .line 537
     new-instance v1, Landroid/animation/LayoutTransition;
 
     invoke-direct {v1}, Landroid/animation/LayoutTransition;-><init>()V
 
-    .line 522
+    .line 538
     const-wide/16 v3, 0xfa
 
     invoke-virtual {v1, v3, v4}, Landroid/animation/LayoutTransition;->setDuration(J)V
 
-    .line 524
+    .line 540
     invoke-virtual {v1, v5, v8, v9}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 525
+    .line 541
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3, v8, v9}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 526
+    .line 542
     new-instance v3, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$1;
 
     invoke-direct {v3, p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$1;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;)V
 
     invoke-virtual {v1, v3}, Landroid/animation/LayoutTransition;->addTransitionListener(Landroid/animation/LayoutTransition$TransitionListener;)V
 
-    .line 536
+    .line 552
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 538
+    .line 554
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNavigationArea:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
 
-    .line 541
+    .line 557
     const v1, 0x7f0e0057
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3645,7 +3713,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mFeedbackIconArea:Landroid/view/ViewGroup;
 
-    .line 542
+    .line 558
     const v1, 0x7f0e0058
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3656,14 +3724,14 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
-    .line 544
+    .line 560
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mOnClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/tablet/InputMethodButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 546
+    .line 562
     const v1, 0x7f0e0059
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3674,21 +3742,21 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
-    .line 547
+    .line 563
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mOnClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/policy/CompatModeButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 548
+    .line 564
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
     const/16 v3, 0x8
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/policy/CompatModeButton;->setVisibility(I)V
 
-    .line 551
+    .line 567
     const v1, 0x7f0e0037
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3697,7 +3765,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mFakeSpaceBar:Landroid/view/View;
 
-    .line 554
+    .line 570
     const v1, 0x7f0e003a
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3706,7 +3774,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mShadow:Landroid/view/View;
 
-    .line 555
+    .line 571
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mShadow:Landroid/view/View;
 
     new-instance v3, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$2;
@@ -3715,12 +3783,12 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 584
+    .line 600
     new-instance v3, Landroid/animation/LayoutTransition;
 
     invoke-direct {v3}, Landroid/animation/LayoutTransition;-><init>()V
 
-    .line 585
+    .line 601
     const-string v1, "alpha"
 
     new-array v4, v6, [F
@@ -3733,15 +3801,15 @@
 
     invoke-virtual {v3, v6, v1}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
 
-    .line 587
+    .line 603
     const-wide/16 v4, 0xc8
 
     invoke-virtual {v3, v6, v4, v5}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 588
+    .line 604
     invoke-virtual {v3, v6, v8, v9}, Landroid/animation/LayoutTransition;->setStartDelay(IJ)V
 
-    .line 589
+    .line 605
     const-string v1, "alpha"
 
     new-array v4, v6, [F
@@ -3754,15 +3822,15 @@
 
     invoke-virtual {v3, v7, v1}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
 
-    .line 591
+    .line 607
     const-wide/16 v4, 0x258
 
     invoke-virtual {v3, v7, v4, v5}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 592
+    .line 608
     invoke-virtual {v3, v7, v8, v9}, Landroid/animation/LayoutTransition;->setStartDelay(IJ)V
 
-    .line 593
+    .line 609
     const v1, 0x7f0e0034
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3773,12 +3841,12 @@
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 595
+    .line 611
     new-instance v3, Landroid/animation/LayoutTransition;
 
     invoke-direct {v3}, Landroid/animation/LayoutTransition;-><init>()V
 
-    .line 596
+    .line 612
     const-string v1, "alpha"
 
     new-array v4, v6, [F
@@ -3791,17 +3859,17 @@
 
     invoke-virtual {v3, v6, v1}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
 
-    .line 598
+    .line 614
     const-wide/16 v4, 0x3e8
 
     invoke-virtual {v3, v6, v4, v5}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 599
+    .line 615
     const-wide/16 v4, 0x1f4
 
     invoke-virtual {v3, v6, v4, v5}, Landroid/animation/LayoutTransition;->setStartDelay(IJ)V
 
-    .line 600
+    .line 616
     const-string v1, "alpha"
 
     new-array v4, v6, [F
@@ -3814,13 +3882,13 @@
 
     invoke-virtual {v3, v7, v1}, Landroid/animation/LayoutTransition;->setAnimator(ILandroid/animation/Animator;)V
 
-    .line 602
+    .line 618
     invoke-virtual {v3, v7, v8, v9}, Landroid/animation/LayoutTransition;->setDuration(IJ)V
 
-    .line 603
+    .line 619
     invoke-virtual {v3, v7, v8, v9}, Landroid/animation/LayoutTransition;->setStartDelay(IJ)V
 
-    .line 604
+    .line 620
     const v1, 0x7f0e0039
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->findViewById(I)Landroid/view/View;
@@ -3831,23 +3899,23 @@
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
 
-    .line 607
+    .line 623
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setAreThereNotifications()V
 
-    .line 610
+    .line 626
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->addPanelWindows()V
 
-    .line 611
+    .line 627
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentButton:Landroid/view/View;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 613
+    .line 629
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/tablet/NotificationPanel;
 
-    const v3, 0x7f0e0062
+    const v3, 0x7f0e0063
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/tablet/NotificationPanel;->findViewById(I)Landroid/view/View;
 
@@ -3857,12 +3925,12 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
-    .line 614
+    .line 630
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 616
+    .line 632
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPile:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
@@ -3871,40 +3939,40 @@
 
     check-cast v1, Landroid/widget/ScrollView;
 
-    .line 617
+    .line 633
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Landroid/widget/ScrollView;->setFillViewport(Z)V
 
-    .line 619
+    .line 635
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
     invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/tablet/HeightReceiver;->addOnBarHeightChangedListener(Lcom/android/systemui/statusbar/tablet/HeightReceiver$OnBarHeightChangedListener;)V
 
-    .line 622
+    .line 638
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 623
+    .line 639
     const-string v3, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 624
+    .line 640
     const-string v3, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 625
+    .line 641
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v2, v3, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 627
+    .line 643
     return-object v0
 
-    .line 585
+    .line 601
     nop
 
     :array_0
@@ -3913,21 +3981,21 @@
         0x0t 0x0t 0x80t 0x3ft
     .end array-data
 
-    .line 589
+    .line 605
     :array_1
     .array-data 0x4
         0x0t 0x0t 0x80t 0x3ft
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 596
+    .line 612
     :array_2
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x0t 0x0t 0x80t 0x3ft
     .end array-data
 
-    .line 600
+    .line 616
     :array_3
     .array-data 0x4
         0x0t 0x0t 0x80t 0x3ft
@@ -3940,7 +4008,7 @@
     .parameter "height"
 
     .prologue
-    .line 639
+    .line 655
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3949,30 +4017,30 @@
 
     check-cast v0, Landroid/view/WindowManager$LayoutParams;
 
-    .line 641
+    .line 657
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
     if-nez v0, :cond_1
 
-    .line 650
+    .line 666
     :cond_0
     :goto_0
     return-void
 
-    .line 645
+    .line 661
     :cond_1
     iget v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     if-eq v2, p1, :cond_0
 
-    .line 646
+    .line 662
     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 647
+    .line 663
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
 
-    .line 648
+    .line 664
     .local v1, wm:Landroid/view/WindowManager;
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/tablet/TabletStatusBarView;
 
@@ -3985,7 +4053,7 @@
     .locals 3
 
     .prologue
-    .line 1321
+    .line 1337
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/tablet/CompatModePanel;->getVisibility()I
@@ -3998,22 +4066,22 @@
 
     const/16 v0, 0x41a
 
-    .line 1323
+    .line 1339
     .local v0, msg:I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1324
+    .line 1340
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1325
+    .line 1341
     return-void
 
-    .line 1321
+    .line 1337
     .end local v0           #msg:I
     :cond_0
     const/16 v0, 0x41b
@@ -4025,7 +4093,7 @@
     .locals 3
 
     .prologue
-    .line 1314
+    .line 1330
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->getVisibility()I
@@ -4038,22 +4106,22 @@
 
     const/16 v0, 0x410
 
-    .line 1316
+    .line 1332
     .local v0, msg:I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1317
+    .line 1333
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1318
+    .line 1334
     return-void
 
-    .line 1314
+    .line 1330
     .end local v0           #msg:I
     :cond_0
     const/16 v0, 0x411
@@ -4065,7 +4133,7 @@
     .locals 2
 
     .prologue
-    .line 1304
+    .line 1320
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mDisabled:I
 
     const/high16 v1, 0x1
@@ -4074,7 +4142,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1305
+    .line 1321
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recent/RecentsPanelView;->getVisibility()I
@@ -4085,22 +4153,22 @@
 
     const/16 v0, 0x3fd
 
-    .line 1307
+    .line 1323
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1308
+    .line 1324
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1310
+    .line 1326
     :cond_0
     return-void
 
-    .line 1305
+    .line 1321
     :cond_1
     const/16 v0, 0x3fc
 
@@ -4112,15 +4180,15 @@
     .parameter "newConfig"
 
     .prologue
-    .line 407
+    .line 414
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHeightReceiver:Lcom/android/systemui/statusbar/tablet/HeightReceiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/HeightReceiver;->updateHeight()V
 
-    .line 408
+    .line 415
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->loadDimens()V
 
-    .line 409
+    .line 416
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationPanelParams:Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->getNotificationPanelHeight()I
@@ -4129,7 +4197,7 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 410
+    .line 417
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v0
@@ -4140,12 +4208,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/WindowManagerImpl;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 412
+    .line 419
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recent/RecentsPanelView;->updateValuesFromResources()V
 
-    .line 413
+    .line 420
     return-void
 .end method
 
@@ -4154,7 +4222,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 1249
+    .line 1265
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -4162,11 +4230,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1252
+    .line 1268
     :goto_0
     return-void
 
-    .line 1250
+    .line 1266
     :catch_0
     move-exception v0
 
@@ -4180,7 +4248,7 @@
     .parameter "viewIndex"
 
     .prologue
-    .line 810
+    .line 826
     return-void
 .end method
 
@@ -4189,18 +4257,18 @@
     .parameter "key"
 
     .prologue
-    .line 940
+    .line 956
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->removeNotificationViews(Landroid/os/IBinder;)Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 941
+    .line 957
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/tablet/TabletTicker;->remove(Landroid/os/IBinder;)V
 
-    .line 942
+    .line 958
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setAreThereNotifications()V
 
-    .line 943
+    .line 959
     return-void
 .end method
 
@@ -4209,17 +4277,17 @@
     .parameter
 
     .prologue
-    .line 1392
+    .line 1408
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/NotificationData;->remove(Landroid/os/IBinder;)Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     move-result-object v1
 
-    .line 1393
+    .line 1409
     if-nez v1, :cond_0
 
-    .line 1394
+    .line 1410
     const-string v0, "TabletStatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4242,14 +4310,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1395
+    .line 1411
     const/4 v0, 0x0
 
-    .line 1410
+    .line 1426
     :goto_0
     return-object v0
 
-    .line 1398
+    .line 1414
     :cond_0
     iget-object v0, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
@@ -4259,18 +4327,18 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 1399
+    .line 1415
     if-eqz v0, :cond_1
 
     iget-object v2, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1408
+    .line 1424
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationIcons()V
 
-    .line 1410
+    .line 1426
     iget-object v0, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
     goto :goto_0
@@ -4282,19 +4350,19 @@
     .prologue
     const/16 v3, 0x3eb
 
-    .line 1500
+    .line 1516
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1501
+    .line 1517
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     const-wide/16 v1, 0xbb8
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1503
+    .line 1519
     return-void
 .end method
 
@@ -4304,20 +4372,20 @@
     .parameter "enabled"
 
     .prologue
-    .line 1241
+    .line 1257
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/tablet/InputMethodButton;->setHardKeyboardStatus(Z)V
 
-    .line 1242
+    .line 1258
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationIcons()V
 
-    .line 1243
+    .line 1259
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->setHardKeyboardStatus(ZZ)V
 
-    .line 1244
+    .line 1260
     return-void
 .end method
 
@@ -4334,7 +4402,7 @@
 
     const/4 v1, 0x0
 
-    .line 1207
+    .line 1223
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodSwitchButton:Lcom/android/systemui/statusbar/tablet/InputMethodButton;
 
     and-int/lit8 v0, p2, 0x1
@@ -4346,31 +4414,31 @@
     :goto_0
     invoke-virtual {v4, p1, v0}, Lcom/android/systemui/statusbar/tablet/InputMethodButton;->setImeWindowStatus(Landroid/os/IBinder;Z)V
 
-    .line 1209
+    .line 1225
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->updateNotificationIcons()V
 
-    .line 1210
+    .line 1226
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mInputMethodsPanel:Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/tablet/InputMethodsPanel;->setImeToken(Landroid/os/IBinder;)V
 
-    .line 1212
+    .line 1228
     packed-switch p3, :pswitch_data_0
 
-    .line 1221
+    .line 1237
     and-int/lit8 v0, p2, 0x2
 
     if-eqz v0, :cond_1
 
     move v0, v3
 
-    .line 1228
+    .line 1244
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBackButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1230
+    .line 1246
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mFakeSpaceBar:Landroid/view/View;
 
     and-int/lit8 v2, p2, 0x2
@@ -4380,40 +4448,40 @@
     :goto_2
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1233
+    .line 1249
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 1207
+    .line 1223
     goto :goto_0
 
     :pswitch_0
     move v0, v2
 
-    .line 1215
+    .line 1231
     goto :goto_1
 
     :pswitch_1
     move v0, v3
 
-    .line 1218
+    .line 1234
     goto :goto_1
 
     :cond_1
     move v0, v2
 
-    .line 1224
+    .line 1240
     goto :goto_1
 
-    .line 1230
+    .line 1246
     :cond_2
     const/16 v1, 0x8
 
     goto :goto_2
 
-    .line 1212
+    .line 1228
     nop
 
     :pswitch_data_0
@@ -4428,7 +4496,7 @@
     .parameter
 
     .prologue
-    .line 1132
+    .line 1148
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMenuButton:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -4437,10 +4505,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1133
+    .line 1149
     const/4 p1, 0x1
 
-    .line 1136
+    .line 1152
     :cond_0
     const-string v0, "TabletStatusBar"
 
@@ -4470,21 +4538,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1137
+    .line 1153
     if-eqz p1, :cond_1
 
-    .line 1138
+    .line 1154
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
     and-int/lit8 v0, v0, -0x2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setSystemUiVisibility(I)V
 
-    .line 1142
+    .line 1158
     :goto_0
     return-void
 
-    .line 1140
+    .line 1156
     :cond_1
     iget v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
@@ -4504,25 +4572,25 @@
 
     const/16 v0, 0x406
 
-    .line 1117
+    .line 1133
     iget v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
     if-eq p1, v2, :cond_0
 
-    .line 1118
+    .line 1134
     iput p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mSystemUiVisibility:I
 
-    .line 1120
+    .line 1136
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1121
+    .line 1137
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v2, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1122
+    .line 1138
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     and-int/lit8 v3, p1, 0x1
@@ -4532,17 +4600,17 @@
     :goto_0
     invoke-virtual {v2, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1125
+    .line 1141
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->notifyUiVisibilityChanged()V
 
-    .line 1127
+    .line 1143
     :cond_0
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 1122
+    .line 1138
     goto :goto_0
 .end method
 
@@ -4557,14 +4625,14 @@
 
     const/4 v1, 0x0
 
-    .line 946
+    .line 962
     iget-object v3, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
-    .line 948
+    .line 964
     iget-object v4, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarContents:Landroid/view/ViewGroup;
 
     const v5, 0x7f0e0030
@@ -4573,7 +4641,7 @@
 
     move-result-object v4
 
-    .line 949
+    .line 965
     iget-object v5, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarContents:Landroid/view/ViewGroup;
 
     const v6, 0x7f0e005c
@@ -4582,7 +4650,7 @@
 
     move-result-object v5
 
-    .line 950
+    .line 966
     const-string v6, "status_bar_clock"
 
     invoke-static {v3, v6, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -4594,10 +4662,10 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mShowClock:Z
 
-    .line 952
+    .line 968
     if-eqz v4, :cond_0
 
-    .line 953
+    .line 969
     if-eqz p1, :cond_4
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mShowClock:Z
@@ -4609,30 +4677,30 @@
     :goto_1
     invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 955
+    .line 971
     :cond_0
     if-eqz v5, :cond_1
 
-    .line 956
+    .line 972
     if-nez p1, :cond_5
 
     :goto_2
     invoke-virtual {v5, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 958
+    .line 974
     :cond_1
     return-void
 
     :cond_2
     move v0, v1
 
-    .line 950
+    .line 966
     goto :goto_0
 
     :cond_3
     move v0, v2
 
-    .line 953
+    .line 969
     goto :goto_1
 
     :cond_4
@@ -4643,7 +4711,7 @@
     :cond_5
     move v1, v2
 
-    .line 956
+    .line 972
     goto :goto_2
 .end method
 
@@ -4651,10 +4719,10 @@
     .locals 0
 
     .prologue
-    .line 402
+    .line 409
     invoke-super {p0}, Lcom/android/systemui/statusbar/StatusBar;->start()V
 
-    .line 403
+    .line 410
     return-void
 .end method
 
@@ -4662,7 +4730,7 @@
     .locals 2
 
     .prologue
-    .line 1873
+    .line 1889
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-virtual {v1}, Lcom/android/systemui/recent/RecentsPanelView;->getVisibility()I
@@ -4673,22 +4741,22 @@
 
     const/16 v0, 0x3fd
 
-    .line 1875
+    .line 1891
     .local v0, msg:I
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->removeMessages(I)V
 
-    .line 1876
+    .line 1892
     iget-object v1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mHandler:Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1877
+    .line 1893
     return-void
 
-    .line 1873
+    .line 1889
     .end local v0           #msg:I
     :cond_0
     const/16 v0, 0x3fc
@@ -4703,7 +4771,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1148
+    .line 1164
     iget-object v2, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mMenuButton:Landroid/view/View;
 
     if-eqz p1, :cond_2
@@ -4713,20 +4781,20 @@
     :goto_0
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1151
+    .line 1167
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setLightsOn(Z)V
 
-    .line 1153
+    .line 1169
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/CompatModeButton;->refresh()V
 
-    .line 1154
+    .line 1170
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModeButton:Lcom/android/systemui/statusbar/policy/CompatModeButton;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/CompatModeButton;->getVisibility()I
@@ -4735,7 +4803,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1155
+    .line 1171
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/Prefs;->read(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -4750,25 +4818,25 @@
 
     if-nez v0, :cond_1
 
-    .line 1157
+    .line 1173
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->showCompatibilityHelp()V
 
-    .line 1163
+    .line 1179
     :cond_1
     :goto_1
     return-void
 
-    .line 1148
+    .line 1164
     :cond_2
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 1160
+    .line 1176
     :cond_3
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->hideCompatibilityHelp()V
 
-    .line 1161
+    .line 1177
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mCompatModePanel:Lcom/android/systemui/statusbar/tablet/CompatModePanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/CompatModePanel;->closePanel()V
@@ -4785,7 +4853,7 @@
     .parameter "icon"
 
     .prologue
-    .line 806
+    .line 822
     return-void
 .end method
 
@@ -4799,17 +4867,17 @@
 
     const/4 v6, 0x0
 
-    .line 837
+    .line 853
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/NotificationData;->findByKey(Landroid/os/IBinder;)Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     move-result-object v8
 
-    .line 838
+    .line 854
     if-nez v8, :cond_0
 
-    .line 839
+    .line 855
     const-string v0, "TabletStatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4832,25 +4900,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 936
+    .line 952
     :goto_0
     return-void
 
-    .line 843
+    .line 859
     :cond_0
     iget-object v3, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 844
+    .line 860
     iget-object v0, v3, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v0, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    .line 846
+    .line 862
     iget-object v1, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v9, v1, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    .line 861
+    .line 877
     iget-object v1, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->expanded:Landroid/view/View;
 
     if-eqz v1, :cond_3
@@ -4897,7 +4965,7 @@
 
     move v1, v2
 
-    .line 867
+    .line 883
     :goto_1
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
@@ -4907,7 +4975,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 868
+    .line 884
     iget-object v4, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-wide v4, v4, Landroid/app/Notification;->when:J
@@ -4928,7 +4996,7 @@
 
     move v3, v2
 
-    .line 871
+    .line 887
     :goto_2
     iget-object v4, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
@@ -4954,7 +5022,7 @@
 
     move v7, v2
 
-    .line 874
+    .line 890
     :goto_3
     iget-object v4, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Landroid/view/View;
 
@@ -4970,7 +5038,7 @@
 
     if-ne v4, v0, :cond_6
 
-    .line 875
+    .line 891
     :goto_4
     if-eqz v1, :cond_a
 
@@ -4978,11 +5046,11 @@
 
     if-eqz v2, :cond_a
 
-    .line 877
+    .line 893
     :cond_1
     iput-object p2, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 880
+    .line 896
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mContext:Landroid/content/Context;
 
@@ -4990,15 +5058,15 @@
 
     invoke-virtual {v9, v0, v1}, Landroid/widget/RemoteViews;->reapply(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 882
+    .line 898
     iget-object v0, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
     iget-object v2, v0, Landroid/app/Notification;->contentIntent:Landroid/app/PendingIntent;
 
-    .line 883
+    .line 899
     if-eqz v2, :cond_7
 
-    .line 884
+    .line 900
     new-instance v0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;
 
     iget-object v3, p2, Lcom/android/internal/statusbar/StatusBarNotification;->pkg:Ljava/lang/String;
@@ -5011,17 +5079,17 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar$NotificationClicker;-><init>(Lcom/android/systemui/statusbar/tablet/TabletStatusBar;Landroid/app/PendingIntent;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 886
+    .line 902
     iget-object v1, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 887
+    .line 903
     iget-object v1, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->content:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 893
+    .line 909
     :goto_5
     new-instance v0, Lcom/android/internal/statusbar/StatusBarIcon;
 
@@ -5045,7 +5113,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/statusbar/StatusBarIcon;-><init>(Ljava/lang/String;IIILjava/lang/CharSequence;)V
 
-    .line 897
+    .line 913
     iget-object v1, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
@@ -5054,7 +5122,7 @@
 
     if-nez v1, :cond_8
 
-    .line 898
+    .line 914
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5079,11 +5147,11 @@
 
     goto/16 :goto_0
 
-    .line 917
+    .line 933
     :catch_0
     move-exception v0
 
-    .line 919
+    .line 935
     const-string v1, "TabletStatusBar"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5110,25 +5178,25 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 920
+    .line 936
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->removeNotificationViews(Landroid/os/IBinder;)Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 921
+    .line 937
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->addNotificationViews(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;)Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 930
+    .line 946
     :goto_6
     if-eqz v7, :cond_2
 
-    .line 931
+    .line 947
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mTicker:Lcom/android/systemui/statusbar/tablet/TabletTicker;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/tablet/TabletTicker;->halt()V
 
-    .line 932
+    .line 948
     invoke-direct {p0, p1, p2, v6}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->tick(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;Z)V
 
-    .line 935
+    .line 951
     :cond_2
     invoke-direct {p0}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->setAreThereNotifications()V
 
@@ -5137,28 +5205,28 @@
     :cond_3
     move v1, v6
 
-    .line 861
+    .line 877
     goto/16 :goto_1
 
     :cond_4
     move v3, v6
 
-    .line 868
+    .line 884
     goto/16 :goto_2
 
     :cond_5
     move v7, v6
 
-    .line 871
+    .line 887
     goto/16 :goto_3
 
     :cond_6
     move v2, v6
 
-    .line 874
+    .line 890
     goto/16 :goto_4
 
-    .line 889
+    .line 905
     :cond_7
     :try_start_1
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
@@ -5167,7 +5235,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 890
+    .line 906
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->content:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -5176,7 +5244,7 @@
 
     goto/16 :goto_5
 
-    .line 902
+    .line 918
     :cond_8
     iget-object v0, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
 
@@ -5184,7 +5252,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 903
+    .line 919
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
 
     iget-object v1, p2, Lcom/android/internal/statusbar/StatusBarNotification;->notification:Landroid/app/Notification;
@@ -5195,7 +5263,7 @@
 
     goto :goto_6
 
-    .line 905
+    .line 921
     :cond_9
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
 
@@ -5207,7 +5275,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 906
+    .line 922
     iget-object v0, v8, Lcom/android/systemui/statusbar/NotificationData$Entry;->largeIcon:Landroid/widget/ImageView;
 
     const/4 v1, 0x4
@@ -5218,11 +5286,11 @@
 
     goto :goto_6
 
-    .line 925
+    .line 941
     :cond_a
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->removeNotificationViews(Landroid/os/IBinder;)Lcom/android/internal/statusbar/StatusBarNotification;
 
-    .line 926
+    .line 942
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->addNotificationViews(Landroid/os/IBinder;Lcom/android/internal/statusbar/StatusBarNotification;)Lcom/android/systemui/statusbar/StatusBarIconView;
 
     goto :goto_6
@@ -5233,15 +5301,15 @@
     .parameter "visible"
 
     .prologue
-    .line 1098
+    .line 1114
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPanelSlightlyVisible:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1099
+    .line 1115
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mPanelSlightlyVisible:Z
 
-    .line 1101
+    .line 1117
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/tablet/TabletStatusBar;->mBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -5249,12 +5317,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1106
+    .line 1122
     :cond_0
     :goto_0
     return-void
 
-    .line 1102
+    .line 1118
     :catch_0
     move-exception v0
 
@@ -5266,39 +5334,39 @@
     .parameter "v"
 
     .prologue
-    .line 1765
+    .line 1781
     invoke-virtual {p1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 1766
+    .line 1782
     .local v0, bgd:Landroid/graphics/drawable/Drawable;
     instance-of v2, v0, Landroid/graphics/drawable/LayerDrawable;
 
     if-nez v2, :cond_0
 
-    .line 1772
+    .line 1788
     :goto_0
     return-void
 
     :cond_0
     move-object v1, v0
 
-    .line 1768
+    .line 1784
     check-cast v1, Landroid/graphics/drawable/LayerDrawable;
 
-    .line 1769
+    .line 1785
     .local v1, d:Landroid/graphics/drawable/LayerDrawable;
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1770
+    .line 1786
     const/4 v2, -0x3
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/LayerDrawable;->setOpacity(I)V
 
-    .line 1771
+    .line 1787
     invoke-virtual {p1, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0

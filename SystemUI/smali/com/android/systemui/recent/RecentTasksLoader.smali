@@ -104,7 +104,7 @@
 
     .line 91
     .local v4, height:I
-    const v8, 0x7f02010b
+    const v8, 0x7f02011e
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getColor(I)I
 
