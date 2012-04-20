@@ -62,10 +62,10 @@
     .parameter "context"
 
     .prologue
-    .line 76
+    .line 80
     const/4 v1, -0x1
 
-    .line 78
+    .line 82
     .local v1, network:I
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -80,15 +80,15 @@
 
     move-result v1
 
-    .line 83
+    .line 87
     :goto_0
     return v1
 
-    .line 80
+    .line 84
     :catch_0
     move-exception v0
 
-    .line 81
+    .line 85
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     invoke-virtual {v0}, Landroid/provider/Settings$SettingNotFoundException;->printStackTrace()V
 
@@ -110,7 +110,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 76
     sget-object v0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->OBSERVED_URIS:Ljava/util/List;
 
     return-object v0
@@ -120,14 +120,14 @@
     .locals 3
 
     .prologue
-    .line 63
+    .line 67
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 64
+    .line 68
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.android.phone"
 
@@ -135,12 +135,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 65
+    .line 69
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 66
+    .line 70
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -149,7 +149,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 67
+    .line 71
     const/4 v1, 0x1
 
     return v1
@@ -163,7 +163,7 @@
 
     const/4 v5, 0x1
 
-    .line 46
+    .line 48
     iget-object v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -178,7 +178,7 @@
 
     check-cast v2, Landroid/telephony/TelephonyManager;
 
-    .line 48
+    .line 50
     .local v2, tm:Landroid/telephony/TelephonyManager;
     iget-object v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mView:Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     move-result v0
 
-    .line 49
+    .line 51
     .local v0, network:I
     iget-object v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mView:Landroid/view/View;
 
@@ -202,43 +202,55 @@
 
     move-result-object v1
 
-    .line 50
+    .line 52
     .local v1, resolver:Landroid/content/ContentResolver;
     const/4 v3, 0x7
 
-    if-ne v3, v0, :cond_1
+    if-eq v3, v0, :cond_0
 
-    .line 51
+    const/16 v3, 0x9
+
+    if-ne v3, v0, :cond_2
+
+    .line 54
+    :cond_0
     invoke-virtual {v2, v6}, Landroid/telephony/TelephonyManager;->toggleLTE(Z)V
 
-    .line 52
+    .line 55
     const/4 v3, 0x2
 
     iput v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mState:I
 
-    .line 53
+    .line 56
     const-string v3, "lte_mode"
 
     invoke-static {v1, v3, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 59
-    :cond_0
+    .line 63
+    :cond_1
     :goto_0
     return-void
 
-    .line 54
-    :cond_1
+    .line 57
+    :cond_2
     const/4 v3, 0x4
 
-    if-ne v3, v0, :cond_0
+    if-eq v3, v0, :cond_3
 
-    .line 55
+    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->getLteOnGsmMode()I
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 59
+    :cond_3
     invoke-virtual {v2, v5}, Landroid/telephony/TelephonyManager;->toggleLTE(Z)V
 
-    .line 56
+    .line 60
     iput v5, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mState:I
 
-    .line 57
+    .line 61
     const-string v3, "lte_mode"
 
     invoke-static {v1, v3, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
@@ -279,54 +291,50 @@
     .local v0, network:I
     packed-switch v0, :pswitch_data_0
 
-    .line 42
-    :goto_0
+    .line 39
     :pswitch_0
-    return-void
-
-    .line 32
-    :pswitch_1
-    const v2, 0x7f020075
-
-    iput v2, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mIcon:I
-
-    .line 33
-    iput v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mState:I
-
-    .line 34
-    const-string v2, "lte_mode"
-
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    goto :goto_0
-
-    .line 37
-    :pswitch_2
     const v2, 0x7f020074
 
     iput v2, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mIcon:I
 
-    .line 38
+    .line 40
     const/4 v2, 0x2
 
     iput v2, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mState:I
 
-    .line 39
+    .line 41
     const-string v2, "lte_mode"
 
     const/4 v3, 0x0
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 44
+    :goto_0
+    return-void
+
+    .line 34
+    :pswitch_1
+    const v2, 0x7f020075
+
+    iput v2, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mIcon:I
+
+    .line 35
+    iput v3, p0, Lcom/android/systemui/statusbar/powerwidget/LTEButton;->mState:I
+
+    .line 36
+    const-string v2, "lte_mode"
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
     goto :goto_0
 
     .line 30
-    nop
-
     :pswitch_data_0
-    .packed-switch 0x4
-        :pswitch_2
+    .packed-switch 0x7
+        :pswitch_1
         :pswitch_0
+        :pswitch_1
         :pswitch_0
         :pswitch_1
     .end packed-switch

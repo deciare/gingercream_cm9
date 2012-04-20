@@ -39,24 +39,24 @@
     .parameter "id"
 
     .prologue
-    .line 1710
+    .line 1711
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1711
+    .line 1712
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
-    .line 1712
+    .line 1713
     iput-object p3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mPkg:Ljava/lang/String;
 
-    .line 1713
+    .line 1714
     iput-object p4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mTag:Ljava/lang/String;
 
-    .line 1714
+    .line 1715
     iput p5, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mId:I
 
-    .line 1715
+    .line 1716
     return-void
 .end method
 
@@ -71,7 +71,7 @@
 
     const/4 v7, 0x0
 
-    .line 1723
+    .line 1724
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -79,7 +79,7 @@
 
     invoke-interface {v4}, Landroid/app/IActivityManager;->resumeAppSwitches()V
 
-    .line 1726
+    .line 1727
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v4
@@ -88,27 +88,27 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 1730
+    .line 1731
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
     if-eqz v4, :cond_0
 
-    .line 1731
+    .line 1732
     const/4 v4, 0x2
 
     new-array v3, v4, [I
 
-    .line 1732
+    .line 1733
     .local v3, pos:[I
     invoke-virtual {p1, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1733
+    .line 1734
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 1734
+    .line 1735
     .local v2, overlay:Landroid/content/Intent;
     new-instance v4, Landroid/graphics/Rect;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    .line 1737
+    .line 1738
     :try_start_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->mIntent:Landroid/app/PendingIntent;
 
@@ -150,7 +150,7 @@
     :try_end_1
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1743
+    .line 1744
     :goto_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -164,7 +164,7 @@
 
     check-cast v1, Landroid/app/KeyguardManager;
 
-    .line 1745
+    .line 1746
     .local v1, kgm:Landroid/app/KeyguardManager;
     if-eqz v1, :cond_0
 
@@ -172,7 +172,7 @@
 
     invoke-virtual {v1, v4}, Landroid/app/KeyguardManager;->exitKeyguardSecurely(Landroid/app/KeyguardManager$OnKeyguardExitResult;)V
 
-    .line 1749
+    .line 1750
     .end local v1           #kgm:Landroid/app/KeyguardManager;
     .end local v2           #overlay:Landroid/content/Intent;
     .end local v3           #pos:[I
@@ -195,13 +195,13 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 1755
+    .line 1756
     :goto_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapse()V
 
-    .line 1758
+    .line 1759
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$NotificationClicker;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHandler:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$H;
@@ -210,16 +210,16 @@
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$H;->sendEmptyMessage(I)Z
 
-    .line 1759
+    .line 1760
     return-void
 
-    .line 1738
+    .line 1739
     .restart local v2       #overlay:Landroid/content/Intent;
     .restart local v3       #pos:[I
     :catch_0
     move-exception v0
 
-    .line 1740
+    .line 1741
     .local v0, e:Landroid/app/PendingIntent$CanceledException;
     const-string v4, "PhoneStatusBar"
 
@@ -245,7 +245,7 @@
 
     goto :goto_1
 
-    .line 1750
+    .line 1751
     .end local v0           #e:Landroid/app/PendingIntent$CanceledException;
     .end local v2           #overlay:Landroid/content/Intent;
     .end local v3           #pos:[I
@@ -254,7 +254,7 @@
 
     goto :goto_2
 
-    .line 1727
+    .line 1728
     :catch_2
     move-exception v4
 

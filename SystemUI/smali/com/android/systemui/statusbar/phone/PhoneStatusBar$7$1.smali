@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 2238
+    .line 2239
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->val$snapshot:Ljava/util/ArrayList;
@@ -48,18 +48,18 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 2243
+    .line 2244
     const/16 v0, 0xa
 
-    .line 2244
+    .line 2245
     .local v0, ROW_DELAY_DECREMENT:I
     const/16 v2, 0x8c
 
-    .line 2245
+    .line 2246
     .local v2, currentDelay:I
     const/4 v5, 0x0
 
-    .line 2250
+    .line 2251
     .local v5, totalDelay:I
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;
 
@@ -69,7 +69,7 @@
 
     invoke-virtual {v9, v11}, Lcom/android/systemui/statusbar/policy/NotificationRowLayout;->setViewRemoval(Z)V
 
-    .line 2252
+    .line 2253
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;
 
     iget-object v9, v9, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -80,7 +80,7 @@
 
     iput-object v10, v9, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mPostCollapseCleanup:Ljava/lang/Runnable;
 
-    .line 2261
+    .line 2262
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->val$snapshot:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -89,17 +89,17 @@
 
     check-cast v4, Landroid/view/View;
 
-    .line 2262
+    .line 2263
     .local v4, sampleView:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     move-result v8
 
-    .line 2263
+    .line 2264
     .local v8, width:I
     mul-int/lit8 v7, v8, 0x8
 
-    .line 2264
+    .line 2265
     .local v7, velocity:I
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->val$snapshot:Ljava/util/ArrayList;
 
@@ -121,11 +121,11 @@
 
     check-cast v6, Landroid/view/View;
 
-    .line 2265
+    .line 2266
     .local v6, v:Landroid/view/View;
     move-object v1, v6
 
-    .line 2266
+    .line 2267
     .local v1, _v:Landroid/view/View;
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;
 
@@ -141,7 +141,7 @@
 
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2272
+    .line 2273
     const/16 v9, 0x32
 
     add-int/lit8 v10, v2, -0xa
@@ -150,13 +150,13 @@
 
     move-result v2
 
-    .line 2273
+    .line 2274
     add-int/2addr v5, v2
 
-    .line 2274
+    .line 2275
     goto :goto_0
 
-    .line 2280
+    .line 2281
     .end local v1           #_v:Landroid/view/View;
     .end local v6           #v:Landroid/view/View;
     :cond_0
@@ -176,6 +176,6 @@
 
     invoke-virtual {v9, v10, v11, v12}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2285
+    .line 2286
     return-void
 .end method
