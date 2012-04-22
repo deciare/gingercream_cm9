@@ -76,8 +76,8 @@
     <color name="dim_foreground_inverse_holo_light">#ffbebebe</color>
     <color name="dim_foreground_inverse_disabled_holo_light">#80bebebe</color>
     <color name="hint_foreground_holo_light">#ff808080</color>
-    <color name="highlighted_text_holo_dark">#6633b5e5</color>
-    <color name="highlighted_text_holo_light">#6633b5e5</color>
+    <color name="highlighted_text_holo_dark">#66f78c19</color>
+    <color name="highlighted_text_holo_light">#66f78c19</color>
     <color name="link_text_holo_dark">#ff5c5cff</color>
     <color name="link_text_holo_light">#ff0000ee</color>
     <color name="group_button_dialog_pressed_holo_dark">#46c5c1ff</color>
