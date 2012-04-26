@@ -172,6 +172,17 @@
     <string name="ellipsis_two_dots">‥</string>
     <string name="mmiError">Problème de connexion ou code IHM non valide.</string>
     <string name="mmiFdnError">Opération réservée aux numéros autorisés</string>
+    <string name="profileNameDefault">Défaut</string>
+    <string name="profileNameWork">Bureau</string>
+    <string name="profileNameHome">Maison</string>
+    <string name="profileNameSilent">Silence</string>
+    <string name="profileNameNight">Nuit</string>
+    <string name="profileGroupPhone">Téléphone</string>
+    <string name="profileGroupCalendar">Agenda</string>
+    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupEmail">Email</string>
+    <string name="profileGroupSMS">SMS</string>
+    <string name="wildcardProfile">Autres</string>
     <string name="serviceEnabled">Le service a été activé.</string>
     <string name="serviceEnabledFor">Ce service a été activé pour :</string>
     <string name="serviceDisabled">Ce service a été désactivé.</string>
@@ -291,6 +302,7 @@
     <string name="global_action_lock">"Verrouillage de l'écran"</string>
     <string name="global_action_power_off">Éteindre</string>
     <string name="global_action_reboot">Redémarrer</string>
+    <string name="global_action_choose_profile">Profils</string>
     <string name="global_action_toggle_silent_mode">Mode silencieux</string>
     <string name="global_action_silent_mode_on_status">Le son est désactivé.</string>
     <string name="global_action_silent_mode_off_status">Le son est activé.</string>

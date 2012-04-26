@@ -172,6 +172,16 @@
     <string name="ellipsis_two_dots">..</string>
     <string name="mmiError">Yhteysongelma tai virheellinen MMI-koodi.</string>
     <string name="mmiFdnError">Voit suorittaa toiminnon vain sallitut puhelut -numeroihin.</string>
+    <string name="profileNameDefault">Oletus</string>
+    <string name="profileNameWork">Työ</string>
+    <string name="profileNameHome">Koti</string>
+    <string name="profileNameSilent">Äänetön</string>
+    <string name="profileNameNight">Yö</string>
+    <string name="profileGroupPhone">Puhelin</string>
+    <string name="profileGroupCalendar">Kalenteri</string>
+    <string name="profileGroupEmail">Sähköposti</string>
+    <string name="profileGroupSMS">Tekstiviesti</string>
+    <string name="wildcardProfile">Muu</string>
     <string name="serviceEnabled">Palvelu otettiin käyttöön.</string>
     <string name="serviceEnabledFor">Palvelu käytössä luokalle:</string>
     <string name="serviceDisabled">Palvelu on poistettu käytöstä.</string>
@@ -269,7 +279,11 @@
     <string name="turn_off_radio">Poista langaton yhteys käytöstä</string>
     <string name="screen_lock">Näytön lukitus</string>
     <string name="power_off">Virta pois</string>
+    <string name="reboot_system">Käynnistä puhelin uudelleen</string>
     <string name="global_action_screenshot">Kuvakaappaus</string>
+    <string name="reboot_reboot">Käynnistä uudelleen</string>
+    <string name="reboot_progress">_Uudelleenkäynnistetään…</string>
+    <string name="reboot_confirm">Laitteesi käynnistyy uudelleen</string>
     <string name="silent_mode_silent">Soittoääni: mykistetty</string>
     <string name="silent_mode_vibrate">Soittoääni: värinä</string>
     <string name="silent_mode_ring">Soittoääni: normaali</string>
@@ -281,6 +295,7 @@
     <string name="global_actions">Puhelimen asetukset</string>
     <string name="global_action_lock">Näytön lukitus</string>
     <string name="global_action_power_off">Katkaise virta</string>
+    <string name="global_action_choose_profile">Profiili</string>
     <string name="global_action_toggle_silent_mode">Äänetön tila</string>
     <string name="global_action_silent_mode_on_status">Äänet ovat POISSA KÄYTÖSTÄ</string>
     <string name="global_action_silent_mode_off_status">Äänet ovat KÄYTÖSSÄ</string>
