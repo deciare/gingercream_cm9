@@ -52,7 +52,7 @@ So starting from the theme directory...
 
 So far, we've initialised a new git repository for AOKP, extracted AOKP milestone 5, then commited it into the __master__ branch of the AOKP repository. We then created and checked out a new __gingercream__ branch for AOKP, based on what's already in __master__.
 
-Now we need to get cherry-pick theme-related commits from CM9. To do this, we first need to add the CM9 version of the theme as a remote repository, then fetch available changes from it.
+Now we need to cherry-pick theme-related commits from CM9. To do this, we first need to add the CM9 version of the theme as a remote repository, then fetch available changes from it.
 
     git remote add cm9 ../cm9
     git fetch --all
@@ -61,7 +61,7 @@ Now we can inspect the __gingercream__ branch in the CM9 directory to see what t
 
     git log cm9/gingercream
 
-Find the ID of a theme-related commit you want to port over to the target ROM, then cherry-pick it. In this example, "edc9bcc6255eddb13f17f1e34f2bce674dfa1a6c" is the ID of the earliest commit that diverges from unmodified CM9.
+Find the ID of a theme-related commit you want to port over to the target ROM, then cherry-pick it. In this example, "edc9bcc6255eddb13f17f1e34f2bce674dfa1a6c" is the ID of the earliest commit that diverges from unmodified CM9. (Rebasing changes this ID, so it will be different from what you have. Check git log for yours!)
 
     git cherry-pick edc9bcc6255eddb13f17f1e34f2bce674dfa1a6c
 
@@ -86,6 +86,6 @@ Resolve conflicts for _each_ conflicting file listed by git status, and once you
 
     git cherry-pick --continue
 
-And then then cherry-pick more commits until you have everything you want.
+And then cherry-pick more commits until you have everything you want.
 
 That's the basic process. There are ways to modify a cherry-picked commit, to commit only part of a changed file, and other fun stuff, but that's more detail than is really appropriate for a README file.
