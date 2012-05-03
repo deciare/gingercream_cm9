@@ -47,10 +47,15 @@ So starting from the theme directory...
     cd aokp
     git init
     ./extracttheme.sh /path/to/aokp_crespo_milestone-5.zip
-    git commit -m 'Initial commit'
-    git checkout -b gingercream
 
-So far, we've initialised a new git repository for AOKP, extracted AOKP milestone 5, then commited it into the __master__ branch of the AOKP repository. We then created and checked out a new __gingercream__ branch for AOKP, based on what's already in __master__.
+We now have framework-res and SystemUI extracted from the AOKP ROM. Next, we have to add these files to git's index (so git keeps track of them) and make an initial commit, which will record the state of the files as they exist now.
+
+    git add framework-res SystemUI
+    git commit -m 'Initial commit'
+
+Next, let's create a branch that will contain our theme changes.
+
+    git checkout -b gingercream
 
 Now we need to cherry-pick theme-related commits from CM9. To do this, we first need to add the CM9 version of the theme as a remote repository, then fetch available changes from it.
 
