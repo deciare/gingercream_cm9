@@ -391,13 +391,13 @@
     .parameter "notification"
 
     .prologue
-    .line 263
+    .line 267
     if-eqz p1, :cond_0
 
-    .line 264
+    .line 268
     iget-object v0, p1, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 265
+    .line 269
     .local v0, tickerText:Ljava/lang/CharSequence;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -405,10 +405,10 @@
 
     if-nez v1, :cond_0
 
-    .line 266
+    .line 270
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 269
+    .line 273
     .end local v0           #tickerText:Ljava/lang/CharSequence;
     :cond_0
     return-void
@@ -461,10 +461,10 @@
     .parameter "depth"
 
     .prologue
-    .line 224
+    .line 228
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/AnimatedImageView;->debug(I)V
 
-    .line 225
+    .line 229
     const-string v0, "View"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -497,7 +497,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
+    .line 230
     const-string v0, "View"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -530,7 +530,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
+    .line 231
     return-void
 .end method
 
@@ -544,25 +544,35 @@
     return-object v0
 .end method
 
+.method public getStatusBarSlot()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 205
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mSlot:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
     .parameter "canvas"
 
     .prologue
-    .line 214
+    .line 218
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/AnimatedImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 216
+    .line 220
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 217
+    .line 221
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 218
+    .line 222
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberText:Ljava/lang/String;
 
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberX:I
@@ -577,7 +587,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 220
+    .line 224
     :cond_0
     return-void
 .end method
@@ -613,18 +623,18 @@
     .parameter "oldh"
 
     .prologue
-    .line 206
+    .line 210
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/systemui/statusbar/AnimatedImageView;->onSizeChanged(IIII)V
 
-    .line 207
+    .line 211
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 208
+    .line 212
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarIconView;->placeNumber()V
 
-    .line 210
+    .line 214
     :cond_0
     return-void
 .end method
@@ -633,7 +643,7 @@
     .locals 13
 
     .prologue
-    .line 231
+    .line 235
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -646,7 +656,7 @@
 
     move-result v7
 
-    .line 233
+    .line 237
     .local v7, tooBig:I
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mIcon:Lcom/android/internal/statusbar/StatusBarIcon;
 
@@ -654,7 +664,7 @@
 
     if-le v10, v7, :cond_2
 
-    .line 234
+    .line 238
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -667,29 +677,29 @@
 
     move-result-object v5
 
-    .line 240
+    .line 244
     .local v5, str:Ljava/lang/String;
     :goto_0
     iput-object v5, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberText:Ljava/lang/String;
 
-    .line 242
+    .line 246
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarIconView;->getWidth()I
 
     move-result v9
 
-    .line 243
+    .line 247
     .local v9, w:I
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarIconView;->getHeight()I
 
     move-result v3
 
-    .line 244
+    .line 248
     .local v3, h:I
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 245
+    .line 249
     .local v4, r:Landroid/graphics/Rect;
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberPain:Landroid/graphics/Paint;
 
@@ -701,14 +711,14 @@
 
     invoke-virtual {v10, v5, v11, v12, v4}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 246
+    .line 250
     iget v10, v4, Landroid/graphics/Rect;->right:I
 
     iget v11, v4, Landroid/graphics/Rect;->left:I
 
     sub-int v8, v10, v11
 
-    .line 247
+    .line 251
     .local v8, tw:I
     iget v10, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -716,13 +726,13 @@
 
     sub-int v6, v10, v11
 
-    .line 248
+    .line 252
     .local v6, th:I
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10, v4}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 249
+    .line 253
     iget v10, v4, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v10, v8
@@ -731,7 +741,7 @@
 
     add-int v1, v10, v11
 
-    .line 250
+    .line 254
     .local v1, dw:I
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
@@ -741,14 +751,14 @@
 
     if-ge v1, v10, :cond_0
 
-    .line 251
+    .line 255
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
     move-result v1
 
-    .line 253
+    .line 257
     :cond_0
     iget v10, v4, Landroid/graphics/Rect;->right:I
 
@@ -768,7 +778,7 @@
 
     iput v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberX:I
 
-    .line 254
+    .line 258
     iget v10, v4, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v10, v6
@@ -777,7 +787,7 @@
 
     add-int v0, v10, v11
 
-    .line 255
+    .line 259
     .local v0, dh:I
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
@@ -787,14 +797,14 @@
 
     if-ge v0, v10, :cond_1
 
-    .line 256
+    .line 260
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
     move-result v0
 
-    .line 258
+    .line 262
     :cond_1
     iget v10, v4, Landroid/graphics/Rect;->bottom:I
 
@@ -816,7 +826,7 @@
 
     iput v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberY:I
 
-    .line 259
+    .line 263
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mNumberBackground:Landroid/graphics/drawable/Drawable;
 
     sub-int v11, v9, v1
@@ -825,10 +835,10 @@
 
     invoke-virtual {v10, v11, v12, v9, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 260
+    .line 264
     return-void
 
-    .line 237
+    .line 241
     .end local v0           #dh:I
     .end local v1           #dw:I
     .end local v3           #h:I
@@ -842,7 +852,7 @@
 
     move-result-object v2
 
-    .line 238
+    .line 242
     .local v2, f:Ljava/text/NumberFormat;
     iget-object v10, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mIcon:Lcom/android/internal/statusbar/StatusBarIcon;
 
@@ -1139,7 +1149,7 @@
     .locals 2
 
     .prologue
-    .line 272
+    .line 276
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

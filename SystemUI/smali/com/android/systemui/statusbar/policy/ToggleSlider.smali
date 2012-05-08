@@ -180,7 +180,7 @@
     if-eqz p2, :cond_1
 
     .line 83
-    const v3, 0x10804ae
+    const v3, 0x10804d2
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -232,7 +232,7 @@
     .end local v1           #slider:Landroid/graphics/drawable/Drawable;
     .end local v2           #thumb:Landroid/graphics/drawable/Drawable;
     :cond_1
-    const v3, 0x10804b2
+    const v3, 0x10804d6
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -240,7 +240,7 @@
 
     .line 90
     .restart local v2       #thumb:Landroid/graphics/drawable/Drawable;
-    const v3, 0x10804b4
+    const v3, 0x10804d8
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

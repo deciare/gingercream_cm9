@@ -1319,7 +1319,7 @@
 
     const v2, 0x1040419
 
-    const v3, 0x1080516
+    const v3, 0x108053a
 
     const/4 v5, 0x1
 

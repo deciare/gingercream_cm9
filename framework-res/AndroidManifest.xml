@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-eng.jenkins.20120429.103654" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-eng.jenkins.20120507.222953" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:pluto="http://www.w3.org/2001/pluto.html">
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
     <eat-comment />
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
@@ -316,6 +316,17 @@
                 <action android:name="android.intent.action.MASTER_CLEAR" />
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <category android:name="android.intent.category.MASTER_CLEAR" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.server.AppsLaunchFailureReceiver">
+            <intent-filter>
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE" />
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE_RESET" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="com.tmobile.intent.action.THEME_PACKAGE_UPDATED" />
+                <category android:name="com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE" />
+                <data android:scheme="package" />
             </intent-filter>
         </receiver>
         <service android:name="com.android.internal.os.storage.ExternalStorageFormatter" android:permission="android.permission.MASTER_CLEAR" android:exported="true" />

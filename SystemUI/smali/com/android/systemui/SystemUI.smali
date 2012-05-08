@@ -6,13 +6,15 @@
 # instance fields
 .field public mContext:Landroid/content/Context;
 
+.field public mStatusBarContainer:Landroid/widget/FrameLayout;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 25
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +29,7 @@
     .parameter "args"
 
     .prologue
-    .line 34
+    .line 38
     return-void
 .end method
 
@@ -36,7 +38,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 31
+    .line 35
     return-void
 .end method
 

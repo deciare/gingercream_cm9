@@ -136,13 +136,7 @@
 
     .line 117
     .local v6, sColorMaskBase:I
-    const v10, 0xffffff
-
-    and-int/2addr v10, v6
-
-    const/high16 v11, -0x6000
-
-    or-int v9, v10, v11
+    move v9, v6
 
     .line 118
     .local v9, sColorMaskOn:I
@@ -260,6 +254,8 @@
     goto :goto_1
 
     .line 122
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -172,6 +172,17 @@
     <string name="ellipsis_two_dots">‥</string>
     <string name="mmiError">Problema di connessione o codice MMI non valido.</string>
     <string name="mmiFdnError">Operazione limitata solo ai numeri di selezione fissa.</string>
+    <string name="profileNameDefault">Predefinito</string>
+    <string name="profileNameWork">Lavoro</string>
+    <string name="profileNameHome">Casa</string>
+    <string name="profileNameSilent">Silenzioso</string>
+    <string name="profileNameNight">Notte</string>
+    <string name="profileGroupPhone">Telefono</string>
+    <string name="profileGroupCalendar">Calendario</string>
+    <string name="profileGroupGmail">Gmail</string>
+    <string name="profileGroupEmail">Email</string>
+    <string name="profileGroupSMS">SMS</string>
+    <string name="wildcardProfile">Altro</string>
     <string name="serviceEnabled">Il servizio è stato attivato.</string>
     <string name="serviceEnabledFor">Il servizio è stato attivato per:</string>
     <string name="serviceDisabled">Il servizio è stato disattivato.</string>
@@ -269,6 +280,16 @@
     <string name="turn_off_radio">Disattiva wireless</string>
     <string name="screen_lock">Blocco schermo</string>
     <string name="power_off">Spegni</string>
+    <string name="reboot_system">Riavvia telefono</string>
+    <string name="global_action_screenshot">Cattura schermata</string>
+    <string name="reboot_reboot">Riavvia</string>
+    <string name="reboot_recovery">Recovery</string>
+    <string name="reboot_bootloader">Bootloader</string>
+    <string name="reboot_bootmenu">Bootmenu</string>
+    <string name="reboot_fastboot">Fastboot</string>
+    <string name="reboot_download">Download</string>
+    <string name="reboot_progress">Riavvio…</string>
+    <string name="reboot_confirm">Il telefono verrà riavviato.</string>
     <string name="silent_mode_silent">Suoneria disattivata</string>
     <string name="silent_mode_vibrate">Suoneria vibrazione</string>
     <string name="silent_mode_ring">Suoneria attiva</string>
@@ -280,6 +301,8 @@
     <string name="global_actions">Opzioni telefono</string>
     <string name="global_action_lock">Blocco schermo</string>
     <string name="global_action_power_off">Spegni</string>
+    <string name="global_action_reboot">Riavvia</string>
+    <string name="global_action_choose_profile">Profilo</string>
     <string name="global_action_toggle_silent_mode">Modalità silenziosa</string>
     <string name="global_action_silent_mode_on_status">Audio non attivo</string>
     <string name="global_action_silent_mode_off_status">Audio attivo</string>
@@ -424,6 +447,8 @@
     <string name="permdesc_clearAppCache">"Consente a un'applicazione di liberare spazio sul telefono eliminando file nella directory della cache dell'applicazione. L'accesso è generalmente limitato a processi di sistema."</string>
     <string name="permlab_movePackage">"Spostare risorse dell'applicazione"</string>
     <string name="permdesc_movePackage">"Consente a un'applicazione di spostare risorse applicative da supporti interni a esterni e viceversa."</string>
+    <string name="permlab_preventpower">modifica azione tasto spegnimento</string>
+    <string name="permdesc_preventpower">"Consente a un'applicazione di cambiare il comportamento del tasto di spegnimento"</string>
     <string name="permlab_readLogs">Lettura dati di registro sensibili</string>
     <string name="permdesc_readLogs">"Consente a un'applicazione di leggere vari file di registro del sistema per trovare informazioni generali sulle operazioni effettuate con il telefono. Tali file potrebbero contenere informazioni personali o riservate."</string>
     <string name="permlab_anyCodecForPlayback">uso di qualsiasi decoder multimediale per la riproduzione</string>
@@ -1178,4 +1203,5 @@ per l'account %s"</string>
     <string name="sending">Invio...</string>
     <string name="launchBrowserDefault">"Avviare l'applicazione Browser?"</string>
     <string name="SetupCallDefault">Accettare la chiamata?</string>
+    <string name="app_killed_message">Applicazione terminata</string>
 </resources>

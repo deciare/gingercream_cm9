@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 218
+    .line 222
     iput-object p1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetBroadcastReceiver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 218
+    .line 222
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetBroadcastReceiver;-><init>(Lcom/android/systemui/statusbar/powerwidget/PowerWidget;)V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "intent"
 
     .prologue
-    .line 220
+    .line 224
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -65,27 +65,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 225
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetBroadcastReceiver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #calls: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->updateButtonLayoutWidth()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->access$100(Lcom/android/systemui/statusbar/powerwidget/PowerWidget;)V
 
-    .line 222
+    .line 226
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetBroadcastReceiver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->setupWidget()V
 
-    .line 229
+    .line 233
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetBroadcastReceiver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->updateWidget()V
 
-    .line 230
+    .line 234
     return-void
 
-    .line 225
+    .line 229
     :cond_0
     invoke-static {p1, p2}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->handleOnReceive(Landroid/content/Context;Landroid/content/Intent;)V
 

@@ -320,7 +320,7 @@
     iput-boolean v7, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mBluetoothTethered:Z
 
     .line 111
-    const v5, 0x1080536
+    const v5, 0x108055a
 
     iput v5, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mBluetoothTetherIconId:I
 
@@ -514,7 +514,7 @@
     iput-boolean v5, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mShowAtLeastThreeGees:Z
 
     .line 180
-    const v5, 0x111002f
+    const v5, 0x1110031
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -691,7 +691,7 @@
 
     move-result-object v5
 
-    const v6, 0x1110034
+    const v6, 0x1110036
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getBoolean(I)Z
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1823
+    .line 1846
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$5;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "animation"
 
     .prologue
-    .line 1825
+    .line 1848
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$5;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
@@ -50,7 +50,7 @@
     #setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTicking:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$602(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 1826
+    .line 1849
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "animation"
 
     .prologue
-    .line 1828
+    .line 1851
     return-void
 .end method
 
@@ -68,6 +68,6 @@
     .parameter "animation"
 
     .prologue
-    .line 1830
+    .line 1853
     return-void
 .end method

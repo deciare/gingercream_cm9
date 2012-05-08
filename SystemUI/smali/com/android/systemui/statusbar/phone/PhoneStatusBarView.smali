@@ -73,31 +73,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 107
+    .line 113
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 108
+    .line 114
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->getCurAlpha()I
 
     move-result v0
 
-    .line 109
+    .line 115
     .local v0, alpha:I
     if-eqz v0, :cond_0
 
-    .line 110
+    .line 116
     invoke-virtual {p1, v0, v1, v1, v1}, Landroid/graphics/Canvas;->drawARGB(IIII)V
 
-    .line 112
+    .line 118
     :cond_0
     iget v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mEndAlpha:I
 
     if-eq v0, v1, :cond_1
 
-    .line 113
+    .line 119
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->invalidate()V
 
-    .line 115
+    .line 121
     :cond_1
     return-void
 .end method
@@ -249,6 +249,22 @@
     goto :goto_0
 .end method
 
+.method protected onDetachedFromWindow()V
+    .locals 1
+
+    .prologue
+    .line 96
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+
+    .line 97
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onBarViewDetached()V
+
+    .line 98
+    return-void
+.end method
+
 .method protected onFinishInflate()V
     .locals 1
 
@@ -291,14 +307,14 @@
 
     const/4 v1, 0x0
 
-    .line 153
+    .line 159
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 154
+    .line 160
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mButtonBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -319,21 +335,21 @@
 
     if-eqz v2, :cond_1
 
-    .line 155
+    .line 161
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mCapturingEvents:Z
 
     move v0, v1
 
-    .line 160
+    .line 166
     :cond_0
     :goto_0
     return v0
 
-    .line 159
+    .line 165
     :cond_1
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mCapturingEvents:Z
 
-    .line 160
+    .line 166
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->interceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -358,10 +374,10 @@
     .parameter "b"
 
     .prologue
-    .line 102
+    .line 108
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 103
+    .line 109
     return-void
 .end method
 
@@ -371,32 +387,32 @@
     .parameter "event"
 
     .prologue
-    .line 166
+    .line 172
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 170
+    .line 176
     invoke-static {}, Landroid/view/accessibility/AccessibilityEvent;->obtain()Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v0
 
-    .line 171
+    .line 177
     .local v0, record:Landroid/view/accessibility/AccessibilityEvent;
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 172
+    .line 178
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
-    .line 173
+    .line 179
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->appendRecord(Landroid/view/accessibility/AccessibilityRecord;)V
 
-    .line 174
+    .line 180
     const/4 v1, 0x1
 
-    .line 176
+    .line 182
     .end local v0           #record:Landroid/view/accessibility/AccessibilityEvent;
     :goto_0
     return v1
@@ -415,17 +431,17 @@
     .parameter "oldh"
 
     .prologue
-    .line 96
+    .line 102
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 97
+    .line 103
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/16 v1, -0x2710
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateExpandedViewPos(I)V
 
-    .line 98
+    .line 104
     return-void
 .end method
 
@@ -434,19 +450,19 @@
     .parameter "event"
 
     .prologue
-    .line 142
+    .line 148
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mCapturingEvents:Z
 
     if-nez v0, :cond_0
 
-    .line 143
+    .line 149
     const/4 v0, 0x0
 
-    .line 148
+    .line 154
     :goto_0
     return v0
 
-    .line 145
+    .line 151
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -454,12 +470,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 146
+    .line 152
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->interceptTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 148
+    .line 154
     :cond_1
     const/4 v0, 0x1
 

@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 161
+    .line 163
     iput-object p1, p0, Lcom/android/systemui/statusbar/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/StatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/StatusBar$1;->val$_pkg:Ljava/lang/String;
@@ -57,7 +57,7 @@
     .parameter "v"
 
     .prologue
-    .line 164
+    .line 166
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBar$1;->this$0:Lcom/android/systemui/statusbar/StatusBar;
 
@@ -73,11 +73,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 168
+    .line 170
     :goto_0
     return-void
 
-    .line 165
+    .line 167
     :catch_0
     move-exception v0
 

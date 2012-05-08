@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 248
+    .line 255
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    .line 249
+    .line 256
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 250
+    .line 257
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 253
+    .line 260
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 254
+    .line 261
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v1, "status_bar_brightness_control"
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 256
+    .line 263
     const-string v1, "screen_brightness_mode"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -71,10 +71,10 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 258
+    .line 265
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->update()V
 
-    .line 259
+    .line 266
     return-void
 .end method
 
@@ -83,10 +83,10 @@
     .parameter "selfChange"
 
     .prologue
-    .line 263
+    .line 270
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->update()V
 
-    .line 264
+    .line 271
     return-void
 .end method
 
@@ -98,7 +98,7 @@
 
     const/4 v3, 0x0
 
-    .line 267
+    .line 274
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -107,7 +107,7 @@
 
     move-result-object v0
 
-    .line 268
+    .line 275
     .local v0, resolver:Landroid/content/ContentResolver;
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -125,7 +125,7 @@
     #setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBrightnessControl:Z
     invoke-static {v4, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$102(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 270
+    .line 277
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const-string v4, "screen_brightness_mode"
@@ -140,18 +140,18 @@
     #setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mAutoBrightness:Z
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$202(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 273
+    .line 280
     return-void
 
     :cond_0
     move v1, v3
 
-    .line 268
+    .line 275
     goto :goto_0
 
     :cond_1
     move v2, v3
 
-    .line 270
+    .line 277
     goto :goto_1
 .end method

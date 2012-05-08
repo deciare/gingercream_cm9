@@ -441,7 +441,7 @@
     .line 155
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity;->mIcon:Landroid/widget/ImageView;
 
-    const v1, 0x10805db
+    const v1, 0x10805ff
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -482,7 +482,7 @@
     .line 162
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity;->mIcon:Landroid/widget/ImageView;
 
-    const v1, 0x10805da
+    const v1, 0x10805fe
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -685,7 +685,7 @@
     iput-object v1, p0, Lcom/android/systemui/usb/UsbStorageActivity;->mIcon:Landroid/widget/ImageView;
 
     .line 125
-    const v1, 0x102032b
+    const v1, 0x1020332
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/usb/UsbStorageActivity;->findViewById(I)Landroid/view/View;
 
@@ -707,7 +707,7 @@
     iput-object v1, p0, Lcom/android/systemui/usb/UsbStorageActivity;->mMessage:Landroid/widget/TextView;
 
     .line 128
-    const v1, 0x102032c
+    const v1, 0x1020333
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/usb/UsbStorageActivity;->findViewById(I)Landroid/view/View;
 
@@ -723,7 +723,7 @@
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 130
-    const v1, 0x102032d
+    const v1, 0x1020334
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/usb/UsbStorageActivity;->findViewById(I)Landroid/view/View;
 

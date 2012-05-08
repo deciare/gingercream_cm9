@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 235
+    .line 239
     iput-object p1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
-    .line 236
+    .line 240
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 237
+    .line 241
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 240
+    .line 244
     iget-object v3, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #getter for: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->mContext:Landroid/content/Context;
@@ -55,7 +55,7 @@
 
     move-result-object v1
 
-    .line 243
+    .line 247
     .local v1, resolver:Landroid/content/ContentResolver;
     const-string v3, "expanded_view_widget"
 
@@ -65,7 +65,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 248
+    .line 252
     const-string v3, "expanded_hide_scrollbar"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 253
+    .line 257
     const-string v3, "expanded_haptic_feedback"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 258
+    .line 262
     const-string v3, "expanded_widget_buttons"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 263
+    .line 267
     const-string v3, "expanded_widget_color"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -101,7 +101,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 268
+    .line 272
     const-string v3, "expanded_hide_indicator"
 
     invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -110,7 +110,7 @@
 
     invoke-virtual {v1, v3, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 273
+    .line 277
     invoke-static {}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->getAllObservedUris()Ljava/util/List;
 
     move-result-object v3
@@ -133,13 +133,13 @@
 
     check-cast v2, Landroid/net/Uri;
 
-    .line 274
+    .line 278
     .local v2, uri:Landroid/net/Uri;
     invoke-virtual {v1, v2, v4, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     goto :goto_0
 
-    .line 276
+    .line 280
     .end local v2           #uri:Landroid/net/Uri;
     :cond_0
     return-void
@@ -151,7 +151,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 286
+    .line 290
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #getter for: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->mContext:Landroid/content/Context;
@@ -163,7 +163,7 @@
 
     move-result-object v1
 
-    .line 287
+    .line 291
     .local v1, resolver:Landroid/content/ContentResolver;
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
@@ -176,7 +176,7 @@
 
     move-result-object v0
 
-    .line 290
+    .line 294
     .local v0, res:Landroid/content/res/Resources;
     const-string v2, "expanded_widget_buttons"
 
@@ -190,25 +190,25 @@
 
     if-eqz v2, :cond_1
 
-    .line 291
+    .line 295
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->setupWidget()V
 
-    .line 301
+    .line 305
     :cond_0
     :goto_0
     invoke-static {p1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->handleOnChangeUri(Landroid/net/Uri;)V
 
-    .line 304
+    .line 308
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->updateWidget()V
 
-    .line 305
+    .line 309
     return-void
 
-    .line 293
+    .line 297
     :cond_1
     const-string v2, "expanded_view_widget"
 
@@ -222,7 +222,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 294
+    .line 298
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #calls: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->updateVisibility()V
@@ -230,7 +230,7 @@
 
     goto :goto_0
 
-    .line 296
+    .line 300
     :cond_2
     const-string v2, "expanded_hide_scrollbar"
 
@@ -244,7 +244,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 297
+    .line 301
     iget-object v2, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #calls: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->updateScrollbar()V
@@ -257,7 +257,7 @@
     .locals 2
 
     .prologue
-    .line 279
+    .line 283
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerWidget$WidgetSettingsObserver;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerWidget;
 
     #getter for: Lcom/android/systemui/statusbar/powerwidget/PowerWidget;->mContext:Landroid/content/Context;
@@ -269,10 +269,10 @@
 
     move-result-object v0
 
-    .line 281
+    .line 285
     .local v0, resolver:Landroid/content/ContentResolver;
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 282
+    .line 286
     return-void
 .end method

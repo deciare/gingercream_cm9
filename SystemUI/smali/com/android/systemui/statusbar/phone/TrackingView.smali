@@ -105,6 +105,22 @@
     return-void
 .end method
 
+.method protected onDetachedFromWindow()V
+    .locals 1
+
+    .prologue
+    .line 76
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
+
+    .line 77
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/TrackingView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onTrackingViewDetached()V
+
+    .line 78
+    return-void
+.end method
+
 .method protected onLayout(ZIIII)V
     .locals 0
     .parameter "changed"

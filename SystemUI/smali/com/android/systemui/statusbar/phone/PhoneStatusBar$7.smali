@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2219
+    .line 2250
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "v"
 
     .prologue
-    .line 2224
+    .line 2255
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v8, v7, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
 
     monitor-enter v8
 
-    .line 2226
+    .line 2257
     :try_start_0
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -59,7 +59,7 @@
 
     move-result v3
 
-    .line 2228
+    .line 2259
     .local v3, numChildren:I
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -69,7 +69,7 @@
 
     move-result v5
 
-    .line 2229
+    .line 2260
     .local v5, scrollTop:I
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -81,13 +81,13 @@
 
     add-int v4, v5, v7
 
-    .line 2230
+    .line 2261
     .local v4, scrollBottom:I
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 2231
+    .line 2262
     .local v6, snapshot:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v2, 0x0
 
@@ -95,7 +95,7 @@
     :goto_0
     if-ge v2, v3, :cond_1
 
-    .line 2232
+    .line 2263
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v7, v7, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mPile:Lcom/android/systemui/statusbar/policy/NotificationRowLayout;
@@ -104,7 +104,7 @@
 
     move-result-object v1
 
-    .line 2233
+    .line 2264
     .local v1, child:Landroid/view/View;
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$7;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -128,23 +128,23 @@
 
     if-ge v7, v4, :cond_0
 
-    .line 2235
+    .line 2266
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2231
+    .line 2262
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2238
+    .line 2269
     .end local v1           #child:Landroid/view/View;
     :cond_1
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 2239
+    .line 2270
     .local v0, N:I
     new-instance v7, Ljava/lang/Thread;
 
@@ -156,13 +156,13 @@
 
     invoke-virtual {v7}, Ljava/lang/Thread;->start()V
 
-    .line 2288
+    .line 2319
     monitor-exit v8
 
-    .line 2289
+    .line 2320
     return-void
 
-    .line 2288
+    .line 2319
     .end local v0           #N:I
     .end local v2           #i:I
     .end local v3           #numChildren:I

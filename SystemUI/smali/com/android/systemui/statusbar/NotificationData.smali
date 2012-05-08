@@ -113,6 +113,19 @@
     goto :goto_0
 .end method
 
+.method public clear()V
+    .locals 1
+
+    .prologue
+    .line 111
+    iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationData;->mEntries:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 112
+    return-void
+.end method
+
 .method public findByKey(Landroid/os/IBinder;)Lcom/android/systemui/statusbar/NotificationData$Entry;
     .locals 3
     .parameter "key"
@@ -177,7 +190,7 @@
     .locals 3
 
     .prologue
-    .line 126
+    .line 130
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationData;->mEntries:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -198,13 +211,13 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 127
+    .line 131
     .local v0, e:Lcom/android/systemui/statusbar/NotificationData$Entry;
     iget-object v2, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->expanded:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
-    .line 128
+    .line 132
     iget-object v2, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Lcom/android/internal/statusbar/StatusBarNotification;
 
     invoke-virtual {v2}, Lcom/android/internal/statusbar/StatusBarNotification;->isClearable()Z
@@ -213,10 +226,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 129
+    .line 133
     const/4 v2, 0x1
 
-    .line 133
+    .line 137
     .end local v0           #e:Lcom/android/systemui/statusbar/NotificationData$Entry;
     :goto_0
     return v2
