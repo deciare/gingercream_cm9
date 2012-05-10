@@ -6135,8 +6135,7 @@
     <public type="bool" name="config_wimaxEnabled" id="0x01110036" />
     <public type="bool" name="config_forceDisableHardwareKeyboard" id="0x01110037" />
     <public type="bool" name="config_hasDockBattery" id="0x01110038" />
-    <public type="bool" name="config_SamsungCDMASignalStrength" id="0x01110039" />
-    <public type="bool" name="lockscreen_isPortrait" id="0x0111003a" />
+    <public type="bool" name="lockscreen_isPortrait" id="0x01110039" />
     <public type="fraction" name="config_dimBehindFadeDuration" id="0x01120000" />
     <public type="plurals" name="num_seconds_ago" id="0x01130000" />
     <public type="plurals" name="num_minutes_ago" id="0x01130001" />
