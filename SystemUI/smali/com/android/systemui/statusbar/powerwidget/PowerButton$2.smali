@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 191
+    .line 190
     iput-object p1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$2;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "v"
 
     .prologue
-    .line 193
+    .line 192
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 195
+    .line 194
     .local v2, type:Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->access$300()Ljava/util/HashMap;
 
@@ -77,7 +77,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 196
+    .line 195
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/statusbar/powerwidget/PowerButton;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -91,7 +91,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 197
+    .line 196
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -100,7 +100,7 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->toggleState()V
 
-    .line 203
+    .line 202
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/systemui/statusbar/powerwidget/PowerButton;>;"
     :cond_1
     invoke-static {}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->access$400()Landroid/view/View$OnClickListener;
@@ -109,14 +109,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 204
+    .line 203
     invoke-static {}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->access$400()Landroid/view/View$OnClickListener;
 
     move-result-object v3
 
     invoke-interface {v3, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 206
+    .line 205
     :cond_2
     return-void
 .end method

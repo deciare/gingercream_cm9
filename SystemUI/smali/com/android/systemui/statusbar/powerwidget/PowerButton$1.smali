@@ -122,23 +122,17 @@
     invoke-static {v10, v0, v11}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->access$000(Lcom/android/systemui/statusbar/powerwidget/PowerButton;II)V
 
     .line 115
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const v10, 0x1060012
 
-    move-result-object v10
-
-    const-string v11, "expanded_widget_color"
-
-    const v12, -0xcc4a1b
-
-    invoke-static {v10, v11, v12}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v6
 
-    .line 117
+    .line 116
     .local v6, sColorMaskBase:I
     move v9, v6
 
-    .line 118
+    .line 117
     .local v9, sColorMaskOn:I
     const v10, 0xffffff
 
@@ -148,7 +142,7 @@
 
     or-int v8, v10, v11
 
-    .line 119
+    .line 118
     .local v8, sColorMaskOff:I
     const v10, 0xffffff
 
@@ -158,7 +152,7 @@
 
     or-int v7, v10, v11
 
-    .line 122
+    .line 121
     .local v7, sColorMaskInter:I
     iget-object v10, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$1;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
@@ -166,7 +160,7 @@
 
     packed-switch v10, :pswitch_data_0
 
-    .line 132
+    .line 131
     iget-object v10, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$1;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
     const v11, 0x7f020063
@@ -182,7 +176,7 @@
     #calls: Lcom/android/systemui/statusbar/powerwidget/PowerButton;->updateImageView(ILandroid/graphics/drawable/Drawable;)V
     invoke-static {v10, v2, v11}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->access$200(Lcom/android/systemui/statusbar/powerwidget/PowerButton;ILandroid/graphics/drawable/Drawable;)V
 
-    .line 137
+    .line 136
     .end local v0           #buttonIcon:I
     .end local v1           #buttonLayer:I
     .end local v2           #buttonState:I
@@ -211,7 +205,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 123
     .restart local v6       #sColorMaskBase:I
     .restart local v7       #sColorMaskInter:I
     .restart local v8       #sColorMaskOff:I
@@ -234,7 +228,7 @@
 
     goto :goto_1
 
-    .line 128
+    .line 127
     :pswitch_1
     iget-object v10, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$1;->this$0:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
@@ -253,7 +247,7 @@
 
     goto :goto_1
 
-    .line 122
+    .line 121
     nop
 
     :pswitch_data_0

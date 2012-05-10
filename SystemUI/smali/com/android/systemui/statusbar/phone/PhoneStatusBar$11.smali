@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2512
+    .line 2516
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$11;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,21 +41,21 @@
     .locals 2
 
     .prologue
-    .line 2514
+    .line 2518
     invoke-static {}, Landroid/os/Debug;->stopMethodTracing()V
 
-    .line 2515
+    .line 2519
     const-string v0, "PhoneStatusBar"
 
     const-string v1, "stopTracing"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2516
+    .line 2520
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$11;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->vibrate()V
 
-    .line 2517
+    .line 2521
     return-void
 .end method

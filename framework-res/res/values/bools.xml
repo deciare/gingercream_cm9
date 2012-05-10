@@ -57,5 +57,6 @@
     <bool name="config_wimaxEnabled">false</bool>
     <bool name="config_forceDisableHardwareKeyboard">false</bool>
     <bool name="config_hasDockBattery">false</bool>
+    <bool name="config_SamsungCDMASignalStrength">false</bool>
     <bool name="lockscreen_isPortrait">true</bool>
 </resources>

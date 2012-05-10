@@ -287,14 +287,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mViewUpdateHandler:Landroid/os/Handler;
 
-    .line 191
+    .line 190
     new-instance v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton$2;-><init>(Lcom/android/systemui/statusbar/powerwidget/PowerButton;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mClickListener:Landroid/view/View$OnClickListener;
 
-    .line 209
+    .line 208
     new-instance v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton$3;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton$3;-><init>(Lcom/android/systemui/statusbar/powerwidget/PowerButton;)V
@@ -374,18 +374,18 @@
     .locals 9
 
     .prologue
-    .line 288
+    .line 287
     new-instance v2, Landroid/content/IntentFilter;
 
     invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 290
+    .line 289
     .local v2, filter:Landroid/content/IntentFilter;
     sget-object v8, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v8
 
-    .line 291
+    .line 290
     :try_start_0
     sget-object v7, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -411,19 +411,19 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 292
+    .line 291
     .local v1, button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->getBroadcastIntentFilter()Landroid/content/IntentFilter;
 
     move-result-object v6
 
-    .line 295
+    .line 294
     .local v6, tmp:Landroid/content/IntentFilter;
     invoke-virtual {v6}, Landroid/content/IntentFilter;->countActions()I
 
     move-result v5
 
-    .line 296
+    .line 295
     .local v5, num:I
     const/4 v3, 0x0
 
@@ -431,12 +431,12 @@
     :goto_0
     if-ge v3, v5, :cond_0
 
-    .line 297
+    .line 296
     invoke-virtual {v6, v3}, Landroid/content/IntentFilter;->getAction(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 298
+    .line 297
     .local v0, action:Ljava/lang/String;
     invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->hasAction(Ljava/lang/String;)Z
 
@@ -444,16 +444,16 @@
 
     if-nez v7, :cond_1
 
-    .line 299
+    .line 298
     invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 296
+    .line 295
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 303
+    .line 302
     .end local v0           #action:Ljava/lang/String;
     .end local v1           #button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     .end local v3           #i:I
@@ -462,10 +462,10 @@
     :cond_2
     monitor-exit v8
 
-    .line 306
+    .line 305
     return-object v2
 
-    .line 303
+    .line 302
     .end local v4           #i$:Ljava/util/Iterator;
     :catchall_0
     move-exception v7
@@ -490,18 +490,18 @@
     .end annotation
 
     .prologue
-    .line 311
+    .line 310
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 313
+    .line 312
     .local v5, uris:Ljava/util/List;,"Ljava/util/List<Landroid/net/Uri;>;"
     sget-object v7, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v7
 
-    .line 314
+    .line 313
     :try_start_0
     sget-object v6, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -526,13 +526,13 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 315
+    .line 314
     .local v0, button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->getObservedUris()Ljava/util/List;
 
     move-result-object v3
 
-    .line 317
+    .line 316
     .local v3, tmp:Ljava/util/List;,"Ljava/util/List<Landroid/net/Uri;>;"
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -553,7 +553,7 @@
 
     check-cast v4, Landroid/net/Uri;
 
-    .line 318
+    .line 317
     .local v4, uri:Landroid/net/Uri;
     invoke-interface {v5, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -561,12 +561,12 @@
 
     if-nez v6, :cond_1
 
-    .line 319
+    .line 318
     invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 323
+    .line 322
     .end local v0           #button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #tmp:Ljava/util/List;,"Ljava/util/List<Landroid/net/Uri;>;"
@@ -586,7 +586,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 325
+    .line 324
     return-object v5
 .end method
 
@@ -595,12 +595,12 @@
     .parameter "key"
 
     .prologue
-    .line 361
+    .line 360
     sget-object v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 362
+    .line 361
     :try_start_0
     sget-object v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -610,7 +610,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 363
+    .line 362
     sget-object v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -621,7 +621,7 @@
 
     monitor-exit v1
 
-    .line 365
+    .line 364
     :goto_0
     return-object v0
 
@@ -632,7 +632,7 @@
 
     goto :goto_0
 
-    .line 367
+    .line 366
     :catchall_0
     move-exception v0
 
@@ -648,12 +648,12 @@
     .parameter "uri"
 
     .prologue
-    .line 343
+    .line 342
     sget-object v3, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 344
+    .line 343
     :try_start_0
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -680,7 +680,7 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 345
+    .line 344
     .local v0, button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->getObservedUris()Ljava/util/List;
 
@@ -692,12 +692,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 346
+    .line 345
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->onChangeUri(Landroid/net/Uri;)V
 
     goto :goto_0
 
-    .line 349
+    .line 348
     .end local v0           #button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     .end local v1           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -716,7 +716,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 350
+    .line 349
     return-void
 .end method
 
@@ -726,18 +726,18 @@
     .parameter "intent"
 
     .prologue
-    .line 329
+    .line 328
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 332
+    .line 331
     .local v0, action:Ljava/lang/String;
     sget-object v4, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v4
 
-    .line 333
+    .line 332
     :try_start_0
     sget-object v3, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -764,7 +764,7 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 335
+    .line 334
     .local v1, button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->getBroadcastIntentFilter()Landroid/content/IntentFilter;
 
@@ -776,12 +776,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 336
+    .line 335
     invoke-virtual {v1, p0, p1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 339
+    .line 338
     .end local v1           #button:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     .end local v2           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -800,7 +800,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 340
+    .line 339
     return-void
 .end method
 
@@ -810,7 +810,7 @@
     .parameter "view"
 
     .prologue
-    .line 229
+    .line 228
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS:Ljava/util/HashMap;
 
     invoke-virtual {v2, p0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -821,12 +821,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 230
+    .line 229
     sget-object v3, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 231
+    .line 230
     :try_start_0
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -836,7 +836,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 233
+    .line 232
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     invoke-virtual {v2, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -847,20 +847,20 @@
 
     invoke-virtual {v2, p1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->setupButton(Landroid/view/View;)V
 
-    .line 246
+    .line 245
     :goto_0
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 247
+    .line 246
     const/4 v2, 0x1
 
-    .line 249
+    .line 248
     :goto_1
     return v2
 
-    .line 237
+    .line 236
     :cond_0
     :try_start_1
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS:Ljava/util/HashMap;
@@ -877,11 +877,11 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 239
+    .line 238
     .local v1, pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->setupButton(Landroid/view/View;)V
 
-    .line 241
+    .line 240
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     invoke-virtual {v2, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -891,12 +891,12 @@
 
     goto :goto_0
 
-    .line 242
+    .line 241
     .end local v1           #pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     :catch_0
     move-exception v0
 
-    .line 243
+    .line 242
     .local v0, e:Ljava/lang/Exception;
     :try_start_2
     const-string v2, "PowerButton"
@@ -923,7 +923,7 @@
 
     goto :goto_0
 
-    .line 246
+    .line 245
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v2
@@ -934,7 +934,7 @@
 
     throw v2
 
-    .line 249
+    .line 248
     :cond_1
     const/4 v2, 0x0
 
@@ -946,10 +946,10 @@
     .parameter "listener"
 
     .prologue
-    .line 353
+    .line 352
     sput-object p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->GLOBAL_ON_CLICK_LISTENER:Landroid/view/View$OnClickListener;
 
-    .line 354
+    .line 353
     return-void
 .end method
 
@@ -958,10 +958,10 @@
     .parameter "listener"
 
     .prologue
-    .line 357
+    .line 356
     sput-object p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->GLOBAL_ON_LONG_CLICK_LISTENER:Landroid/view/View$OnLongClickListener;
 
-    .line 358
+    .line 357
     return-void
 .end method
 
@@ -969,12 +969,12 @@
     .locals 4
 
     .prologue
-    .line 266
+    .line 265
     sget-object v3, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 268
+    .line 267
     :try_start_0
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -1000,7 +1000,7 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 269
+    .line 268
     .local v1, pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     const/4 v2, 0x0
 
@@ -1008,7 +1008,7 @@
 
     goto :goto_0
 
-    .line 274
+    .line 273
     .end local v1           #pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     :catchall_0
     move-exception v2
@@ -1019,19 +1019,19 @@
 
     throw v2
 
-    .line 273
+    .line 272
     :cond_0
     :try_start_1
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 274
+    .line 273
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 275
+    .line 274
     return-void
 .end method
 
@@ -1039,12 +1039,12 @@
     .locals 4
 
     .prologue
-    .line 278
+    .line 277
     sget-object v3, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 280
+    .line 279
     :try_start_0
     sget-object v2, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->BUTTONS_LOADED:Ljava/util/HashMap;
 
@@ -1070,13 +1070,13 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/powerwidget/PowerButton;
 
-    .line 281
+    .line 280
     .local v1, pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->update()V
 
     goto :goto_0
 
-    .line 283
+    .line 282
     .end local v1           #pb:Lcom/android/systemui/statusbar/powerwidget/PowerButton;
     :catchall_0
     move-exception v2
@@ -1093,7 +1093,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 284
+    .line 283
     return-void
 .end method
 
@@ -1103,7 +1103,7 @@
     .parameter "resId"
 
     .prologue
-    .line 181
+    .line 180
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1112,11 +1112,11 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 182
+    .line 181
     .local v0, imageIcon:Landroid/widget/ImageView;
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 183
+    .line 182
     return-void
 .end method
 
@@ -1126,7 +1126,7 @@
     .parameter "resDraw"
 
     .prologue
-    .line 186
+    .line 185
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1135,16 +1135,16 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 187
+    .line 186
     .local v0, imageIcon:Landroid/widget/ImageView;
     const v1, 0x7f020063
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 188
+    .line 187
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 189
+    .line 188
     return-void
 .end method
 
@@ -1154,7 +1154,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 159
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
@@ -1175,7 +1175,7 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 163
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1191,7 +1191,7 @@
     .parameter "uri"
 
     .prologue
-    .line 157
+    .line 156
     return-void
 .end method
 
@@ -1201,7 +1201,7 @@
     .parameter "intent"
 
     .prologue
-    .line 152
+    .line 151
     return-void
 .end method
 
@@ -1210,36 +1210,36 @@
     .parameter "view"
 
     .prologue
-    .line 168
+    .line 167
     iput-object p1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
-    .line 169
+    .line 168
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 169
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mType:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 171
+    .line 170
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 172
+    .line 171
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mLongClickListener:Landroid/view/View$OnLongClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 174
+    .line 173
     :cond_0
     return-void
 .end method
@@ -1251,13 +1251,13 @@
     .locals 0
 
     .prologue
-    .line 145
+    .line 144
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->updateState()V
 
-    .line 146
+    .line 145
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->updateView()V
 
-    .line 147
+    .line 146
     return-void
 .end method
 
@@ -1268,13 +1268,13 @@
     .locals 2
 
     .prologue
-    .line 177
+    .line 176
     iget-object v0, p0, Lcom/android/systemui/statusbar/powerwidget/PowerButton;->mViewUpdateHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 178
+    .line 177
     return-void
 .end method
