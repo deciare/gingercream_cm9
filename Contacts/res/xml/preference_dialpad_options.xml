@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="true" android:title="@string/dialer_ui_orientation_title" android:key="misc_sensor_rotation" android:summary="@string/dialer_ui_orientation_summary" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/t9_state_title" android:key="t9_state" android:summary="@string/t9_state_summary" android:defaultValue="true" />
+    <CheckBoxPreference android:persistent="true" android:title="@string/t9_dial_click_title" android:key="t9_dial_onclick" android:summary="@string/t9_dial_click_summary" android:dependency="t9_state" />
+    <ListPreference android:entries="@array/t9_sort_entries" android:title="@string/t9_sort_title" android:key="t9_sort" android:summary="@string/t9_sort_summary" android:dependency="t9_state" android:defaultValue="@string/t9_default_sort" android:dialogTitle="@string/t9_sort_title" android:entryValues="@array/t9_sort_values" />
+</PreferenceScreen>

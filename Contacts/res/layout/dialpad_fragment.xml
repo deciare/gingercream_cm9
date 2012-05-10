@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/top" android:paddingLeft="@dimen/dialpad_horizontal_margin" android:paddingRight="@dimen/dialpad_horizontal_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:id="@id/digits_container" android:background="@drawable/dialpad_background" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_marginTop="@dimen/dialpad_vertical_margin" android:layout_weight="0.1">
+        <com.android.contacts.dialpad.DigitsEditText android:textAppearance="@style/DialtactsDigitsTextAppearance" android:textColor="?android:textColorPrimary" android:gravity="center" android:id="@id/digits" android:background="@android:color/transparent" android:nextFocusRight="@id/overflow_menu" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageButton android:state_enabled="false" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/deleteButton" android:background="?android:selectableItemBackground" android:layout_width="56.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_dial_action_delete" android:contentDescription="@string/description_delete_button" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:id="@id/t9topbar" android:background="@drawable/dialpad_background" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="0.1">
+        <ListView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/t9listtop" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="40.0dip" android:divider="@null" android:layout_weight="1.0" android:overScrollMode="never" />
+        <ToggleButton android:layout_gravity="center" android:id="@id/t9toggle" android:background="@drawable/t9toggle_state" android:visibility="invisible" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="centerInside" android:textOn="" android:textOff="" />
+    </LinearLayout>
+    <ViewSwitcher android:id="@id/t9flipper" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.65">
+        <include layout="@layout/dialpad" />
+        <ListView android:id="@id/t9list" android:background="@drawable/dialpad_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scrollingCache="true" />
+    </ViewSwitcher>
+    <View android:background="#66000000" android:layout_width="fill_parent" android:layout_height="@dimen/dialpad_vertical_margin" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/dialButtonContainer" android:background="@drawable/dialpad_background" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="0.15">
+        <ImageButton android:state_enabled="false" android:layout_gravity="center_vertical" android:id="@id/searchButton" android:background="?android:selectableItemBackground" android:layout_width="wrap_content" android:layout_height="?android:actionBarSize" android:src="@drawable/ic_dial_action_search" android:contentDescription="@string/description_search_button" />
+        <ImageButton android:state_enabled="false" android:layout_gravity="center" android:id="@id/dialButton" android:background="@drawable/btn_call" android:layout_width="0.0px" android:layout_height="fill_parent" android:src="@drawable/ic_dial_action_call" android:layout_weight="1.0" android:contentDescription="@string/description_dial_button" />
+        <ImageButton android:layout_gravity="center_vertical" android:id="@id/overflow_menu" android:background="?android:selectableItemBackground" android:nextFocusLeft="@id/digits" android:layout_width="wrap_content" android:layout_height="?android:actionBarSize" android:src="@drawable/ic_menu_overflow" android:contentDescription="@android:string/action_menu_overflow_description" />
+    </LinearLayout>
+    <ListView android:id="@id/dialpadChooser" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_weight="1.0" />
+</LinearLayout>
